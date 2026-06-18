@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1: Interfaz y Coordenadas - Dibujo Técnico</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos adicionales para el contenido didáctico */
+        .bloque-teoria, .bloque-laboratorio, .bloque-evaluacion {
+            background-color: var(--color-card);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .bloque-teoria { border-left: 5px solid var(--color-secundario); }
+        .bloque-laboratorio { border-left: 5px solid #10b981; } /* Verde para laboratorio */
+        .bloque-evaluacion { border-left: 5px solid var(--color-acento); } /* Ámbar para evaluaciones */
+        
+        .codigo-cad {
+            background-color: #1e293b;
+            color: #38bdf8;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            display: block;
+            overflow-x: auto;
+        }
+        .tabla-coordenadas, .tabla-rubrica {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .tabla-coordenadas th, .tabla-coordenadas td, .tabla-rubrica th, .tabla-rubrica td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .tabla-coordenadas th, .tabla-rubrica th {
+            background-color: #f1f5f9;
+            color: var(--color-primario);
+        }
+        .btn-volver {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--color-secundario);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Estilos para el cuestionario interactivo */
+        .pregunta {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .pregunta p {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .opcion {
+            display: block;
+            margin: 0.4rem 0;
+            cursor: pointer;
+        }
+        .btn-evaluar {
+            background-color: var(--color-acento);
+            color: var(--color-primario);
+            border: none;
+            padding: 0.6rem 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-evaluar:hover {
+            background-color: #d97706;
+        }
+        .resultado-quiz {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--color-secundario);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge-nivel">Módulo 01</span>
+            <h1>Interfaz de Usuario y Sistemas de Coordenadas</h1>
+            <p>Componente formativo: 2 Horas de Teoría, 2 Horas de Laboratorio y Evaluaciones de Competencia.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="btn-volver">← Volver al Inicio del Curso</a>
+
+        <section class="bloque-teoria">
+            <h2>Sky 1. Componente Teórico (Duración: 2 Horas)</h2>
+            <br>
+            <h3>1.1 El Entorno de Trabajo CAD</h3>
+            <p>Para dominar el dibujo asistido por computadora, primero debemos comprender la interfaz gráfica estándar. Los sistemas CAD modernos organizan sus herramientas en una <strong>Cinta de Opciones (Ribbon)</strong> superior, subdividida en pestañas (Inicio, Inserción, Anotar). El elemento más crítico es la <strong>Línea de Comandos</strong>, ubicada en la parte inferior, la cual actúa como el canal de comunicación directo entre el operador y el software.</p>
+            
+            <br>
+            <h3>1.2 Sistemas de Coordenadas Geométricas</h3>
+            <p>Toda entidad geométrica en el espacio de dibujo se ubica mediante una matriz matemática basada en el plano cartesiano (Ejes X e Y). Para dibujar con precisión milimétrica, empleamos cuatro métodos de introducción de datos:</p>
+            
+            <table class="tabla-coordenadas">
+                <thead>
+                    <tr>
+                        <th>Tipo de Coordenada</th>
+                        <th>Sintaxis en CAD</th>
+                        <th>Descripción Técnica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Absoluta Cartesiana</strong></td>
+                        <td><code>X,Y</code></td>
+                        <td>Se mide directamente desde el punto de origen exacto (0,0) del plano.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Relativa Cartesiana</strong></td>
+                        <td><code>@X,Y</code></td>
+                        <td>Se mide tomando como origen "cero" el último punto dibujado en pantalla.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Absoluta Polar</strong></td>
+                        <td><code>Distancia&lt;Ángulo</code></td>
+                        <td>Se ubica mediante una distancia y un ángulo medido desde el origen (0,0).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Relativa Polar</strong></td>
+                        <td><code>@Distancia&lt;Ángulo</code></td>
+                        <td>Ubica el siguiente punto mediante una distancia y un ángulo respecto al último punto.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><em>Nota sobre ángulos:</em> En dibujo técnico digital, los ángulos se miden en sentido antihorario, donde 0° es el este (derecha), 90° es el norte (arriba), 180° es el oeste y 270° es el sur.</p>
+        </section>
+
+        <section class="bloque-evaluacion">
+            <h2>📝 Evaluación Teórica: Control de Lectura y Conceptos</h2>
+            <p>Responda las siguientes preguntas para comprobar su comprensión teórica antes de pasar al laboratorio.</p>
+            <br>
+            <form id="quiz-teorico">
+                <div class="pregunta">
+                    <p>1. ¿Qué símbolo se antepone en la línea de comandos para indicar que una coordenada es de tipo Relativa?</p>
+                    <label class="opcion"><input type="radio" name="p1" value
