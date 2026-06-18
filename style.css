@@ -1,0 +1,248 @@
+/* CONFIGURACIONES GENERALES Y VARIABLES DE MARCA (Estilo Técnico/Industrial) */
+:root {
+    --color-primario: #0f172a; /* Azul marino pizarra */
+    --color-secundario: #0284c7; /* Azul cian / Tinta técnica CAD */
+    --color-acento: #f59e0b; /* Ámbar para realzar elementos */
+    --color-fondo: #f8fafc; /* Gris técnico claro */
+    --color-card: #ffffff;
+    --color-texto: #334155;
+    --color-texto-suave: #64748b;
+    --fuente: 'Segoe UI', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* HERO SECTION (ENCABEZADO DINÁMICO) */
+.hero {
+    background: #1e293b;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+                      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 25px 25px, 25px 25px; /* Simula cuadrícula milimetrada técnica */
+    color: white;
+    padding: 6rem 1.5rem;
+    text-align: center;
+    position: relative;
+    border-bottom: 4px solid var(--color-secundario);
+}
+
+.badge-nivel {
+    background-color: var(--color-secundario);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 0 auto 2rem auto;
+    color: #cbd5e1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 0.5rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primario { background-color: var(--color-secundario); color: white; }
+.btn-primario:hover { background-color: #0369a1; }
+.btn-secundario { background-color: transparent; color: white; border: 2px solid white; }
+.btn-secundario:hover { background-color: white; color: var(--color-primario); }
+
+/* DASHBOARD / MÉTRICAS */
+.dashboard-metricas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: -3rem;
+    margin-bottom: 3rem;
+}
+
+.metric-card {
+    background-color: var(--color-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    border-top: 4px solid var(--color-secundario);
+    text-align: center;
+}
+
+.metric-card h3 {
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+/* SECCIÓN OBJETIVOS Y FILOSOFÍA */
+.seccion-objetivos, .seccion-filosofia {
+    background-color: var(--color-card);
+    padding: 2.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.seccion-filosofia {
+    border-left: 6px solid var(--color-acento);
+}
+
+h2 {
+    color: var(--color-primario);
+    margin-bottom: 1.2rem;
+}
+
+.lista-objetivos {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+.lista-objetivos li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.lista-objetivos li::before {
+    content: "📐";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* BUSCADOR */
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.buscador-contenedor {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+#buscador-modulos {
+    width: 100%;
+    max-width: 600px;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#buscador-modulos:focus {
+    border-color: var(--color-secundario);
+}
+
+/* GRID DE MÓDULOS */
+.grid-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.modulo-card {
+    background-color: var(--color-card);
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.modulo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.modulo-numero {
+    font-size: 0.8rem;
+    color: var(--color-secundario);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.modulo-card h3 {
+    color: var(--color-primario);
+    margin: 0.5rem 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+.modulo-card p {
+    font-size: 0.95rem;
+    color: var(--color-texto-suave);
+    margin-bottom: 1.5rem;
+}
+
+.horas-badge {
+    background-color: #f1f5f9;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: var(--color-primario);
+    color: #94a3b8;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin-top: 5rem;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .dashboard-metricas { margin-top: 1rem; }
+}

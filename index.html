@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujo Técnico Computarizado - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge-nivel">Nivel Técnico</span>
+            <h1>Dibujo Técnico Computarizado</h1>
+            <p>Aprende las competencias clave para dibujar, leer e interpretar planos y gráficos técnicos asistidos por computadora (CAD).</p>
+            <div class="hero-buttons">
+                <a href="#temario" class="btn btn-primario">Ver Plan de Estudios</a>
+                <a href="#investigacion" class="btn btn-secundario">Zona de Investigación</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="dashboard-metricas" aria-label="Resumen del curso">
+            <div class="metric-card">
+                <h3>Duración Total</h3>
+                <p class="metric-value">16 Módulos</p>
+            </div>
+            <div class="metric-card">
+                <h3>Por Módulo</h3>
+                <p class="metric-value">2h Teo / 2h Lab</p>
+            </div>
+            <div class="metric-card">
+                <h3>Disponibilidad</h3>
+                <p class="metric-value">Acceso Libre</p>
+            </div>
+        </section>
+
+        <section class="seccion-objetivos">
+            <h2>Objetivos del Aprendizaje</h2>
+            <p>Al finalizar este trayecto formativo, el participante habrá desarrollado capacidades técnicas específicas orientadas al entorno laboral industrial, arquitectónico y de ingeniería:</p>
+            <ul class="lista-objetivos">
+                <li><strong>Dibujar:</strong> Construir geometrías bidimensionales y modelos tridimensionales con precisión milimétrica bajo normativas internacionales (ISO / ANSI).</li>
+                <li><strong>Leer:</strong> Descomponer vistas e identificar la disposición espacial de los objetos representados.</li>
+                <li><strong>Interpretar:</strong> Comprender las anotaciones técnicas, tolerancias, acotados y escalas en planos de manufactura o construcción.</li>
+            </ul>
+        </section>
+
+        <section id="investigacion" class="seccion-filosofia">
+            <h2>Comunidad, Investigación y Mejora Continua</h2>
+            <p>Este curso es un entorno vivo de aprendizaje. Más allá de asimilar el material disponible, se promueve que cada estudiante sea un investigador activo. Buscamos la optimización constante de nuestros recursos mediante el debate técnico y el <strong>aporte de nuevo material de valor</strong> (bloques CAD, planos reales de estudio o guías avanzadas).</p>
+        </section>
+
+        <section id="temario">
+            <h2 class="titulo-seccion">Estructura del Plan de Estudios</h2>
+            
+            <div class="buscador-contenedor">
+                <input type="text" id="buscador-modulos" placeholder="🔎 Buscar módulos por palabras clave (ej. Capas, 3D, Isométrico)...">
+            </div>
+
+            <div class="grid-modulos" id="contenedor-modulos">
+                <article class="modulo-card" data-keywords="interfaz coordenadas cad inicio introduccion">
+                    <span class="modulo-numero">Módulo 01</span>
+                    <h3>Interfaz de Usuario y Sistemas de Coordenadas</h3>
+                    <p>Configuración del espacio de trabajo y uso del sistema cartesiano y polar absoluto/relativo.</p>
+                    <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
+                </article>
+
+                <article class="modulo-card" data-keywords="geometria lineas circulos arcos construccion">
+                    <span class="modulo-numero">Módulo 02</span>
+                    <h3>Construcciones Geométricas Básicas</h3>
+                    <p>Trazado de líneas, arcos, tangencias, empalmes y bisección de ángulos.</p>
+                    <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
+                </article>
+
+                <article class="modulo-card" data-keywords="capas layers propiedades colores lineas">
+                    <span class="modulo-numero">Módulo 03</span>
+                    <h3>Organización del Dibujo: Capas (Layers)</h3>
+                    <p>Uso correcto de capas, tipos de líneas normalizadas, espesores y organización estructural.</p>
+                    <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
+                </article>
+
+                <article class="modulo-card" data-keywords="vistas proyecciones diidro ortogonal dibujo">
+                    <span class="modulo-numero">Módulo 04</span>
+                    <h3>Vistas Ortogonales y Proyecciones Técnicas</h3>
+                    <p>Sistemas de proyección Europeo y Americano. Obtención de plantas, alzados y perfiles.</p>
+                    <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
+                </article>
+
+                <article class="modulo-card" data-keywords="acotado dimensiones escalas textos tolerancias">
+                    <span class="modulo-numero">Módulos 05 al 15</span>
+                    <h3>Acotación, Bloques Complejos y Cortes de Sección</h3>
+                    <p>Inserción de dimensiones bajo norma, creación de librerías dinámicas y representación de cortes técnicos.</p>
+                    <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio (c/u)</div>
+                </article>
+
+                <article class="modulo-card" data-keywords="3d modelado solidos impresion layout plot">
+                    <span class="modulo-numero">Módulo 16</span>
+                    <h3>Modelado 3D Esencial y Layout de Impresión</h3>
+                    <p>Introducción a extrusiones de sólidos y preparación de planos finales para impresión a escala (Ploteo).</p>
+                    <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Repositorio Educativo de Dibujo Técnico Computarizado</p>
+        <p>Código abierto alojado en GitHub - Diseñado para el Aprendizaje Técnico y la Mejora Continua</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
