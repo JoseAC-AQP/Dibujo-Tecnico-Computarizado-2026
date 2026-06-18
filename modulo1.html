@@ -236,3 +236,239 @@
 
                 <div class="pregunta" data-correcta="c">
                     <p>4. ¿Qué función cumple la tecla de acceso rápido F3 en el modelado técnico digital?</p>
+                    <label class="opcion"><input type="radio" name="q4" value="a"> Restringir el movimiento de forma estrictamente ortogonal.</label>
+                    <label class="opcion"><input type="radio" name="q4" value="b"> Activar el guardado automático de la plantilla de dibujo.</label>
+                    <label class="opcion"><input type="radio" name="q4" value="c"> Conmutar el encendido y apagado de las capturas de objetos exactos (OSNAP).</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="pregunta" data-correcta="b">
+                    <p>5. ¿Cuál es el comportamiento de las coordenadas ingresadas sin anteponer el carácter '@'?</p>
+                    <label class="opcion"><input type="radio" name="q5" value="a"> Se procesan con respecto al último punto geométrico ingresado.</label>
+                    <label class="opcion"><input type="radio" name="q5" value="b"> Se computan como absolutas tomando como pivote estricto el origen invariable (0,0).</label>
+                    <label class="opcion"><input type="radio" name="q5" value="c"> Provocan un error sintáctico de entrada en la consola de comandos.</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <button type="button" class="btn-evaluar" onclick="evaluarQuizAvanzado()">Validar Aptitud Teórica</button>
+            </form>
+            <div id="res-quiz-avanzado" style="margin-top: 1rem; font-weight: bold; font-size: 1.1rem;"></div>
+        </section>
+
+        <section class="bloque-laboratorio">
+            <h2>💻 2. Componente Práctico (Duración: 2 Horas)</h2>
+            <br>
+            <h3>2.1 Práctica Guiada: Modelado de Perfil Geométrico Cerrado</h3>
+            <p>Construya en su estación CAD un cuadrado estricto calibrado en dimensiones de 50x50 unidades empleando sintaxis estructurada por bloques en línea de comandos:</p>
+            
+            <div class="codigo-cad">
+                Comando: L [Presione Enter]<br>
+                Precise primer punto: 10,10 [Origen Absoluto]<br>
+                Precise siguiente punto: @50,0 [Desplazamiento horizontal positivo]<br>
+                Precise siguiente punto: @0,50 [Desplazamiento vertical positivo]<br>
+                Precise siguiente punto: @-50,0 [Desplazamiento horizontal negativo]<br>
+                Precise siguiente punto: C [Cierre de polígono normalizado]
+            </div>
+
+            <br>
+            <h3>2.2 Guía de Taller Práctico Desarrollada</h3>
+            <p>Descargue el plano de taller normado complementario para ejecutar la secuencia de asignación práctica de laboratorio:</p>
+            <div class="caja-descarga" style="border-color: #10b981;">
+                <div>
+                    <strong>📄 Guía de Práctica Instruccional N° 1 - Trazados Lineales Basales</strong>
+                    <p style="font-size: 0.85rem; color: var(--color-texto-suave); margin: 0;">Formato: PDF | Incluye esquemas angulares y coordenadas complejas</p>
+                </div>
+                <a href="documentos/guia-laboratorio1.pdf" target="_blank" class="btn-descarga" style="background-color: #10b981;">📥 Descargar PDF</a>
+            </div>
+        </section>
+
+        <section class="bloque-evaluacion">
+            <h2>🏆 Rúbrica Analítica de Laboratorio (Escala Vigesimal: 0 - 20)</h2>
+            <p>Considere los siguientes indicadores cuantitativos estándar para medir la calidad técnica de su archivo <code>.DWG</code> antes de remitir su propuesta de aporte:</p>
+            
+            <table class="tabla-tecnica">
+                <thead>
+                    <tr>
+                        <th>Criterio Evaluado</th>
+                        <th>Excelente (4 pts)</th>
+                        <th>Bueno (3 pts)</th>
+                        <th>Suficiente (2 pts)</th>
+                        <th>Insuficiente (0 pts)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Precisión Dimensional</strong></td>
+                        <td>Cierre exacto en coordenadas de origen. Desviación 0.000 unidades.</td>
+                        <td>Cierre correcto pero con desfase menor por uso indebido de clicks.</td>
+                        <td>La figura tiene las medidas correctas pero flota desanclada en el espacio.</td>
+                        <td>Dimensiones alteradas o figuras abiertas de forma errónea.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sintaxis y Comandos</strong></td>
+                        <td>Uso óptimo verificado de coordenadas polares y relativas puras por consola.</td>
+                        <td>Empleo parcial de coordenadas, auxiliado excesivamente por rastreo visual.</td>
+                        <td>Trazado lento sin uso de alias ni atajos rápidos por teclado.</td>
+                        <td>Delineado empírico manual al ojo sin exactitud matemática alguna.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ayudas de Precisión</strong></td>
+                        <td>Uso impecable de capturas OSNAP en vértices e intersecciones.</td>
+                        <td>Fallas puntuales de captura por no limpiar puntos basura.</td>
+                        <td>Configuración imprecisa de intervalos de rastreo angular.</td>
+                        <td>Omisión total de ayudas automáticas, forzando cierres erráticos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estructura del Archivo</strong></td>
+                        <td>Nomenclatura limpia del archivo y guardado bajo el formato nativo estipulado.</td>
+                        <td>Nomenclatura incompleta pero archivo íntegro y accesible.</td>
+                        <td>El archivo abre con advertencias sintácticas por fallas en software externo.</td>
+                        <td>Archivo corrupto, ilegible o extensión incompatible de sistema.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="seccion-filosofia">
+            <h2>🔍 Espacio de Investigación y Aporte Comunitario</h2>
+            <p>¿Desarrolló una versión optimizada de las guías o desea indexar sus archivos resueltos de precisión para consulta estudiantil?</p>
+            <br>
+            <p><strong>Directrices obligatorias de calidad para la carga de material:</strong></p>
+            <ul class="lista-directrices">
+                <li>El archivo de dibujo debe guardarse con extensión limpia <code>.DWG</code> nativa.</li>
+                <li>Debe adjuntar obligatoriamente una imagen descriptiva del plano en formato <code>.PNG</code> o <code>.JPG</code> de alta resolución.</li>
+                <li>Estructurar el nombre del documento bajo la convención: <code>MOD1_APORTE_APELLIDO.zip</code>.</li>
+            </ul>
+            <br>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <a href="https://github.com/JoseAc-AQP/Dibujo-Tecnico-Computarizado-2026/issues/new?title=[Aporte+Módulo+1]+Propuesta+de+Material" target="_blank" 
+                   style="display: inline-block; background-color: var(--color-secundario); color: white; padding: 0.7rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">
+                    📤 Registrar Aporte (Crear Issue en GitHub)
+                </a>
+                <a href="https://github.com/JoseAc-AQP/Dibujo-Tecnico-Computarizado-2026/pulls" target="_blank" 
+                   style="display: inline-block; background-color: var(--color-primario); color: white; padding: 0.7rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem; border: 1px solid #475569;">
+                    💻 Enviar Pull Request Institucional
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Repositorio Educativo de Dibujo Técnico Computarizado | JoseAc-AQP</p>
+    </footer>
+
+    <script>
+        // LÓGICA DEL SIMULADOR CARTESIANO (CANVAS)
+        const canvas = document.getElementById('planoCartesiano');
+        const ctx = canvas.getContext('2d');
+        let p1 = { x: 100, y: 300 }; // Punto inicial de referencia didáctica en lienzo
+
+        function dibujarPlano() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Rejilla técnica secundaria (Gris sutil)
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 0.5;
+            for(let i = 0; i < canvas.width; i += 20) {
+                ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke();
+            }
+            
+            // Ejes Cartesiano de Referencia en Rojo y Verde CAD
+            ctx.lineWidth = 1.5;
+            ctx.strokeStyle = '#ef4444'; // Eje X
+            ctx.beginPath(); ctx.moveTo(0, 300); ctx.lineTo(canvas.width, 300); ctx.stroke();
+            ctx.strokeStyle = '#10b981'; // Eje Y
+            ctx.beginPath(); ctx.moveTo(100, 0); ctx.lineTo(100, canvas.height); ctx.stroke();
+
+            // Dibujar punto fijo P1
+            ctx.fillStyle = '#f59e0b';
+            ctx.beginPath(); ctx.arc(p1.x, p1.y, 5, 0, 2 * Math.PI); ctx.fill();
+        }
+
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            // Conversión de coordenadas píxel a unidades técnicas relativas al origen local (100, 300)
+            const cadX = Math.round((mouseX - 100));
+            const cadY = Math.round((300 - mouseY));
+
+            const p1CadX = Math.round((p1.x - 100));
+            const p1CadY = Math.round((300 - p1.y));
+
+            // Vectores diferenciales relativos (Delta)
+            const dx = cadX - p1CadX;
+            const dy = cadY - p1CadY;
+
+            // Cálculos Polares Relativos matemáticos
+            const distancia = Math.round(Math.sqrt(dx*dx + dy*dy));
+            let angulo = Math.round(Math.atan2(dy, dx) * (180 / Math.PI));
+            if (angulo < 0) angulo += 360;
+
+            // Renderizar dinámicamente en textos
+            document.getElementById('v-cursor').textContent = `(${cadX}, ${cadY})`;
+            document.getElementById('v-abs').textContent = `${cadX}, ${cadY}`;
+            document.getElementById('v-rel').textContent = `@${dx}, ${dy}`;
+            document.getElementById('v-polar').textContent = `@${distancia}<${angulo}°`;
+
+            // Redibujar el vector dinámico interactivo en pantalla
+            dibujarPlano();
+            ctx.strokeStyle = '#38bdf8';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(mouseX, mouseY); ctx.stroke();
+            ctx.setLineDash([]);
+        });
+
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            p1.x = e.clientX - rect.left;
+            p1.y = e.clientY - rect.top;
+            const cadX = Math.round((p1.x - 100));
+            const cadY = Math.round((300 - p1.y));
+            document.getElementById('v-p1').textContent = `(${cadX}, ${cadY})`;
+        });
+
+        dibujarPlano();
+
+        // LÓGICA DE VERIFICACIÓN PEDAGÓGICA DEL CUESTIONARIO
+        function evaluarQuizAvanzado() {
+            const preguntas = document.querySelectorAll('.pregunta');
+            let notaTeorica = 0;
+
+            preguntas.forEach(p => {
+                const respuestaCorrecta = p.getAttribute('data-correcta');
+                const seleccionada = p.querySelector(`input[name="${p.querySelector('input').name}"]:checked`);
+                const feedbackDiv = p.querySelector('.feedback');
+                
+                feedbackDiv.style.display = 'block';
+
+                if (seleccionada) {
+                    if (seleccionada.value === respuestaCorrecta) {
+                        notaTeorica += 4; // Cada pregunta vale 4 puntos para alcanzar los 20 máximos
+                        feedbackDiv.style.color = '#10b981';
+                        feedbackDiv.textContent = '✔ ¡Correcto! Comprensión técnica adecuada.';
+                    } else {
+                        feedbackDiv.style.color = '#ef4444';
+                        feedbackDiv.textContent = `✘ Incorrecto. La respuesta adecuada era la opción (${respuestaCorrecta.toUpperCase()}).`;
+                    }
+                } else {
+                    feedbackDiv.style.color = '#f59e0b';
+                    feedbackDiv.textContent = '⚠ Pregunta omitida sin calificar.';
+                }
+            });
+
+            const contenedorResultado = document.getElementById('res-quiz-avanzado');
+            if (notaTeorica >= 12) {
+                contenedorResultado.style.color = '#10b981';
+                contenedorResultado.textContent = `🎉 Nota Obtenida: ${notaTeorica}/20. Posee las bases conceptuales requeridas para el modelado en laboratorio.`;
+            } else {
+                contenedorResultado.style.color = '#f59e0b';
+                contenedorResultado.textContent = `📋 Nota Obtenida: ${notaTeorica}/20. Se sugiere revisar detenidamente la tabla sintáctica y reintentar el test.`;
+            }
+        }
+    </script>
+</body>
+</html>
