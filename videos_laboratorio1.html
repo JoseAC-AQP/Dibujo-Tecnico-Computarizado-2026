@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos Guía: Laboratorio 1 - Sistemas de Coordenadas en CAD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <header class="bg-techBlue text-white p-4 shadow-md flex justify-between items-center z-10">
+        <div>
+            <span class="text-xs text-techCyan font-bold uppercase block tracking-wider">Módulo 1: Recursos Multimedia</span>
+            <h1 class="text-md md:text-lg font-bold">Videoteca Técnica: Introducción a Sistemas de Coordenadas</h1>
+        </div>
+        <a href="modulo1.html" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs py-2 px-4 rounded-lg transition flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Volver al Módulo 1
+        </a>
+    </header>
+
+    <main class="max-w-5xl w-full mx-auto p-6 flex-grow space-y-8">
+        
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+            <h2 class="text-lg font-bold text-techBlue mb-1">Instrucciones del Laboratorio Multimedia</h2>
+            <p class="text-sm text-gray-600">
+                El dominio del espacio bidimensional en software CAD requiere comprender con precisión matemática cómo ingresar puntos en el plano. Revise detenidamente los siguientes tutoriales antes de proceder con el trazo de las geometrías de su hoja de trabajo.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
+                <div class="relative w-full h-0 pb-[56.25%] bg-black">
+                    <iframe class="absolute top-0 left-0 w-full h-full" 
+                            src="https://www.youtube.com/embed/zMPN20LVlIo?start=319" 
+                            title="Coordenadas Absolutas y Relativas en CAD" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] bg-blue-100 text-techBlue font-bold px-2 py-0.5 rounded uppercase tracking-wide">Vídeo 1</span>
+                        <h3 class="font-bold text-base text-gray-900 mt-2">Coordenadas Absolutas y Relativas</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                            Explicación detallada sobre la sintaxis de dibujo cartesiano. Aprenda a diferenciar la inserción basada en el origen global absoluto $(0,0)$ frente al uso del prefijo <code class="bg-gray-100 px-1 rounded text-red-600 font-mono">@</code> para referenciar el último punto marcado en el lienzo técnico.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
+                <div class="relative w-full h-0 pb-[56.25%] bg-black">
+                    <iframe class="absolute top-0 left-0 w-full h-full" 
+                            src="https://www.youtube.com/embed/ktbSWg8cfvI" 
+                            title="Coordenadas Polares y Rectangulares" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] bg-cyan-100 text-cyan-800 font-bold px-2 py-0.5 rounded uppercase tracking-wide">Vídeo 2</span>
+                        <h3 class="font-bold text-base text-gray-900 mt-2">Coordenadas Polares y Rectangulares</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                            Estudio de la geometría angular orientada al diseño computarizado. Domine el ingreso de magnitudes vectoriales utilizando longitudes de segmento y ángulos de inclinación mediante la condicional del operador menor que <code class="bg-gray-100 px-1 rounded text-red-600 font-mono">&lt;</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-950 text-gray-500 text-center py-4 text-xs border-t border-gray-900 mt-12">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Contenido multimedia integrado.</p>
+    </footer>
+
+</body>
+</html>
