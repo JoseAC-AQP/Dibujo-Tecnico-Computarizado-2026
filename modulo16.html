@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 16: Generación de Vistas de Trabajo y Documentación 2D a partir de Modelos 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 16: Generación de Vistas 2D a partir de Modelos 3D</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Proyección automatizada de planos de taller, Layouts, ventanas gráficas, escalas normalizadas y exportación digital inteligente.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Avanzado / Profesional
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. El Concepto de Proyección 3D-2D</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Ventanas Gráficas y Escalas</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. El Enlace Asociativo entre el Modelo Volumétrico y el Plano de Taller</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Aunque el modelado 3D optimiza el análisis de interferencias y la simulación por computadora, las plantas de fabricación, fresado y control de calidad siguen demandando láminas impresas en dos dimensiones debido a su comodidad física en estaciones de trabajo mecánicas. El dibujo asistido moderno no requiere trazar las líneas de estas vistas manualmente; en su lugar, se extraen mediante una **proyección ortogonal automatizada**.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Siguiendo los lineamientos de la **UNED** e **ISO 128**, la gran ventaja de esta metodología radica en la **asociatividad bidireccional**. Cuando el ingeniero modifica un radio, una extrusión o un espesor en el archivo de diseño sólido 3D, el software recalcula inmediatamente las líneas visibles, ocultas y los sombreados de sección en los planos de ensamble y despiece 2D vinculados, eliminando errores de actualización manual de documentación en los talleres.
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos de Maquetación y Espacio Papel (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    La transición controlada de un entorno tridimensional a una lámina estandarizada requiere dominar la separación de entornos del software CAD:
+                </p>
+
+                <div class="space-y-4 mb-8">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">A. Espacio Modelo (Model) vs. Espacio Papel (Layout)</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            El **Espacio Modelo** se utiliza exclusivamente para construir las geometrías en escala real 1:1 de forma tridimensional. El **Espacio Papel (Layout o Presentación)** representa la hoja física de dibujo (ej. formatos normalizados A4, A3 o A2 según **ISO 5457**), donde se incrusta el cajetín de datos y se posicionan las vistas ordenadas de la pieza.
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">B. Ventanas Gráficas (Viewports) y Escalas de Trabajo</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Una ventana gráfica es un visor dinámico abierto en la hoja de presentación que enfoca el modelo 3D. Cada ventana gráfica cuenta con su propia escala independiente (ej. 1:1, 1:2, 2:1). Al aplicar la proyección automatizada, el comando interpreta el sólido y genera con precisión matemática el alzado, la planta, el perfil lateral y las vistas auxiliares en sección de acuerdo con el sistema de proyección seleccionado (Primer o Tercer Diedro).
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Comandos Críticos de Proyección Industrial en CAD</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm border border-gray-200">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Comando CAD</th>
+                                    <th class="p-3 font-semibold">Función Técnica Específica</th>
+                                    <th class="p-3 font-semibold">Criterio Técnico / Taller</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600 font-medium">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-mono font-bold text-blue-600">VISTABASE (VIEWBASE)</td>
+                                    <td class="p-3">Genera una vista base de alzado en el Layout apuntando a un sólido 3D de AutoCAD o Inventor.</td>
+                                    <td class="p-3">Calcula líneas ocultas discontinuas de forma automática.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-mono font-bold text-blue-600">VISTASECCION (VIEWSECTION)</td>
+                                    <td class="p-3">Traza una línea de corte sobre una vista existente y proyecta una sección total o escalonada.</td>
+                                    <td class="p-3">Inserta el patrón de rayado (Hatch) e incluye las flechas e identificadores del plano de corte.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-mono font-bold text-blue-600">VISTADETALLE (VIEWDETAIL)</td>
+                                    <td class="p-3">Crea un visor circular amplificado (ej. escala 4:1) enfocado en una zona diminuta o compleja.</td>
+                                    <td class="p-3">Indispensable para acotar ranuras de chaveteros, roscas finas o entalladuras de desahogo.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Maquetación Automática de Planos)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Proyecto de Fin de Curso:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante tomará el archivo de sólido tridimensional generado en la sesión previa (Brida de retención) y maquetará de forma automatizada una lámina de taller normalizada formato **ISO A3**, incorporando alzado, planta en corte total, un detalle ampliado y una vista isométrica ilustrativa.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Preparación del Layout y Formato Base:</strong> Abra el archivo <code>Modulo15_Brida_Solid3D.dwg</code>. Diríjase a la pestaña de presentación `Presentación 1` (Layout). Ejecute el comando de administración de páginas, configure el tamaño de impresión física en **ISO A3 (420 x 297 mm)** y limpie cualquier ventana gráfica antigua residual.</li>
+                    <li><strong>Proyección Automatizada de la Vista Base:</strong> Invoque el comando **`VISTABASE` (`VIEWBASE`)** seleccionando la opción "A partir de espacio modelo". Posicione la vista de alzado frontal en la esquina inferior izquierda del layout a una escala estandarizada **1:1**. Desplace el cursor hacia arriba para proyectar la vista superior (planta) y hacia un costado para generar una vista isométrica del sólido en 3D.</li>
+                    <li><strong>Inclusión del Plano de Sección y Detalle:</strong> Use el comando **`VISTASECCION` (`VIEWSECTION`)** en su opción completa. Marque una línea de corte diametral de lado a lado que atraviese dos agujeros de perno en la vista frontal. Desplace el cursor hacia un extremo para proyectar de forma limpia la vista seccionada con su rayado automático normalizado. Use el comando **`VISTADETALLE` (`VIEWDETAIL`)** para amplificar una zona de chaflán a escala **2:1**.</li>
+                    <li><strong>Acotación e Impresión Digital:</strong> Agregue las cotas funcionales de diámetro exterior, diámetro de paso de pernos e hilos de rosca sobre las capas adecuadas utilizando anotaciones inteligentes. Rellene el cuadro de rotulación (cajetín) con sus datos correspondientes y exporte el plano en formato PDF nativo utilizando el comando `TRAZAR` (`PLOT`). Nombre al archivo final: <code>Modulo16_Plano_Taller_2D.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Formativa del Sistema Documental</h2>
+                <p class="text-sm text-gray-600 mb-4">Valida tus conocimientos sobre la integración y derivación de planos técnicos 2D a partir de modelos digitales tridimensionales:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. ¿Qué ocurre de manera automática en el Espacio Papel (Layout) de un software CAD si cambiamos las dimensiones físicas de una pieza en su modelo sólido tridimensional 3D?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p29" class="mr-2">a) El software elimina el plano y es obligatorio volver a trazar todas las líneas a mano.</label>
+                            <label class="block"><input type="radio" name="p29" class="mr-2">b) Gracias a la propiedad de asociatividad bidireccional, las vistas proyectadas en 2D se recalculan y actualizan automáticamente reflejando los nuevos cambios del sólido en el plano técnico.</label>
+                            <label class="block"><input type="radio" name="p29" class="mr-2">c) El plano técnico 2D se bloquea permanentemente y no permite ser impreso o exportado a formato PDF.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. ¿Para qué se utiliza específicamente el comando VISTADETALLE (VIEWDETAIL) en la maquetación avanzada de planos de despiece mecánicos?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p30" class="mr-2">a) Para renderizar la pieza aplicando materiales realistas como cromo o acero pulido.</label>
+                            <label class="block"><input type="radio" name="p30" class="mr-2">b) Para ocultar las líneas de ejes de simetría de los agujeros pasantes.</label>
+                            <label class="block"><input type="radio" name="p30" class="mr-2">c) Para aislar una porción muy pequeña, compleja o crítica de la pieza y proyectarla en una ventana gráfica circular independiente con una escala amplificada (ej. 2:1 o 5:1), facilitando su correcta interpretación y acotado.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 16:\n1: b) La propiedad clave de los softwares modernos es la asociatividad inteligente entre el entorno 3D y las vistas 2D proyectadas.\n2: c) Las vistas de detalle amplifican de manera focalizada zonas de geometría milimétrica compleja para posibilitar una acotación clara en fábrica.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
