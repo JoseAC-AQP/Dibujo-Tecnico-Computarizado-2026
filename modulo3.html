@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3: Organización del Dibujo: Capas (Layers)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 3: Organización del Dibujo: Capas (Layers)</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Estructuración lógica de planos y aplicación de líneas normalizadas ISO.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Técnico
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Concepto de Capa (Layer)</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Líneas Normalizadas (ISO)</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. El Concepto de Capa (Layer) en Dibujo Técnico</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Históricamente, en el diseño manual (como detalla el manual de la <strong>UNED</strong>), los ingenieros utilizaban superposiciones de papel vegetal transparente para separar la geometría base de las cotas o las notas de texto. En el entorno computarizado actual, las <strong>Capas (Layers)</strong> actúan como láminas transparentes digitales que permiten clasificar los objetos geométricos según su función técnica dentro del plano.
+                </p>
+                
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Estados Esenciales de Control de Capas:</h3>
+                <ul class="list-disc pl-5 space-y-2 text-sm text-gray-600">
+                    <li><strong>Activar / Desactivar (On/Off):</strong> Visibiliza u oculta los objetos de la capa en pantalla. La capa oculta sigue procesándose en los cálculos del sistema.</li>
+                    <li><strong>Inutilizar / Reutilizar (Freeze/Thaw):</strong> Desactiva la visualización e impide que el software gaste memoria en procesar esos vectores, acelerando el rendimiento en planos industriales masivos.</li>
+                    <li><strong>Bloquear / Desbloquear (Lock/Unlock):</strong> Los objetos permanecen visibles pero se vuelven inmunes a modificaciones o borrados accidentales en el taller de diseño.</li>
+                    <li><strong>Imprimir (Plot/No Plot):</strong> Determina si el contenido de la capa aparecerá en el PDF técnico final o plano físico impreso (por ejemplo, útil para ocultar líneas guía de anotaciones).</li>
+                </ul>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    Un error crítico en la formación técnica es dibujar todo con el mismo espesor y color. La norma internacional <strong>ISO 128 / DIN 15</strong> y las metodologías estándar alemanas de la <strong>GTZ</strong> prescriben que la forma y el espesor de cada línea transmiten un significado operativo directo en manufactura.
+                </p>
+
+                <div class="mt-4">
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Carta Estándar de Capas (Estructura de Referencia Industrial)</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Nombre de Capa</th>
+                                    <th class="p-3 font-semibold">Color Sugerido</th>
+                                    <th class="p-3 font-semibold">Tipo de Línea CAD</th>
+                                    <th class="p-3 font-semibold">Espesor (mm)</th>
+                                    <th class="p-3 font-semibold">Aplicación en Planta / Taller</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-mono font-bold text-gray-900">01_CONTORNOS</td>
+                                    <td class="p-3 text-blue-600 font-semibold">Blanco / Azul</td>
+                                    <td class="p-3 font-mono">Continuous</td>
+                                    <td class="p-3 font-semibold text-gray-900">0.50 - 0.70 mm</td>
+                                    <td class="p-3">Aristas y contornos visibles de la pieza mecánica.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-mono font-bold text-gray-900">02_EJES</td>
+                                    <td class="p-3 text-red-500 font-semibold">Rojo</td>
+                                    <td class="p-3 font-mono text-red-600">CENTER / ISO Dash Dot</td>
+                                    <td class="p-3">0.25 mm</td>
+                                    <td class="p-3">Ejes de simetría, centros de círculos y trayectorias.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-mono font-bold text-gray-900">03_COTAS</td>
+                                    <td class="p-3 text-green-600 font-semibold">Verde / Menta</td>
+                                    <td class="p-3 font-mono">Continuous</td>
+                                    <td class="p-3">0.25 mm</td>
+                                    <td class="p-3">Líneas de medida, flechas, números y dimensiones.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-mono font-bold text-gray-900">04_OCULTAS</td>
+                                    <td class="p-3 text-yellow-500 font-semibold">Amarillo</td>
+                                    <td class="p-3 font-mono text-yellow-600">DASHED / Hidden</td>
+                                    <td class="p-3">0.35 mm</td>
+                                    <td class="p-3">Aristas interiores no visibles o cavidades cubiertas.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 font-mono font-bold text-gray-900">05_RAYADOS</td>
+                                    <td class="p-3 text-gray-500 font-semibold">Gris / Magenta</td>
+                                    <td class="p-3 font-mono">Continuous (Patrón ANSI)</td>
+                                    <td class="p-3">0.18 - 0.25 mm</td>
+                                    <td class="p-3">Hachurados que indican secciones y cortes de material.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+                    <p class="text-xs md:text-sm text-yellow-800 leading-relaxed">
+                        <strong>Regla de Oro de la Variable LTSCALE:</strong> En el software CAD, el factor de escala de tipo de línea (comando <code>LTSCALE</code>) regula el tamaño de los trazos y espacios de las líneas discontinuas. Si una línea de eje se visualiza en pantalla como una línea continua común, ajuste la escala global reduciendo su valor (ej. a <code>0.5</code> o <code>0.25</code>) para adaptarlo a las dimensiones de su formato de dibujo.
+                    </p>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Práctica Asistida)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Problema Técnico a Resolver:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante descargará un archivo base conteniendo el diseño de un <strong>"Cuerpo de Válvula con Perforaciones Interiores e Isométricas"</strong>. El archivo original está dibujado por completo en la capa por defecto <code>0</code> con líneas continuas de color blanco. El desafío radica en estructurar el plano y aplicar la normalización tipográfica correcta.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo en el Taller Digital:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Creación de la Estructura:</strong> Abra el Administrador de Propiedades de Capas mediante el comando <code>CAPA</code> (LAYER o LA). Genere las 5 capas estandarizadas de la tabla teórica anterior especificando el nombre exacto, código de color y espesor de impresión (Lineweight).</li>
+                    <li><strong>Carga de Tipos de Línea:</strong> Para la capa de ejes y líneas ocultas, ingrese al selector de tipo de línea, haga clic en "Cargar" (Load) e incorpore los patrones normalizados <code>CENTER2</code> y <code>HIDDEN2</code> respectivamente.</li>
+                    <li><strong>Migración de Entidades:</strong> Seleccione las líneas del dibujo que representen las perforaciones internas ocultas y desplácelas hacia la capa <code>04_OCULTAS</code> desde la barra de propiedades. Realice el mismo proceso con las líneas de centro migrándolas a <code>02_EJES</code>.</li>
+                    <li><strong>Verificación de Espesores:</strong> Active en la barra inferior de estado el botón de **Visualizar Espesor de Línea (LWDISPLAY)** para constatar en tiempo real el contraste jerárquico entre el contorno de la pieza (grueso) y las cotas/ejes (finos). Guarde como: <code>Modulo3_Capas_Estandar.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Formativa</h2>
+                <p class="text-sm text-gray-600 mb-4">Valida tus competencias técnicas conceptuales:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. ¿Qué estado de capa se debe emplear para ocultar un grupo de elementos de la pantalla y asegurar que el software optimice la memoria RAM al no cargarlos en el procesador gráfico?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p3" class="mr-2">a) Desactivar (Off).</label>
+                            <label class="block"><input type="radio" name="p3" class="mr-2">b) Inutilizar / Congelar (Freeze).</label>
+                            <label class="block"><input type="radio" name="p3" class="mr-2">c) Bloquear (Lock).</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. De acuerdo con la norma ISO 128 y los fundamentos técnicos GTZ, ¿qué espesor aproximado de trazo le corresponde a un eje de simetría o línea de centro en un plano de formato estándar?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p4" class="mr-2">a) Línea muy gruesa de 0.70 mm.</label>
+                            <label class="block"><input type="radio" name="p4" class="mr-2">b) Línea fina normalizada de 0.25 mm.</label>
+                            <label class="block"><input type="radio" name="p4" class="mr-2">c) Línea extra fina de 0.05 mm.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 3:\n1: b) Inutilizar / Congelar (Freeze) descarga la geometría de la memoria.\n2: b) Línea fina normalizada de 0.25 mm para garantizar la jerarquía visual.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
