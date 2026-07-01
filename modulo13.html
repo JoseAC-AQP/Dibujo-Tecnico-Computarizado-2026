@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 13: Introducción al Dibujo de Instalaciones Industriales y Diagramas P&ID</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 13: Dibujo de Instalaciones Industriales y Diagramas P&ID</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Simbología normalizada ISA-S5.1, esquemas de tuberías, válvulas, accesorios y lazos de instrumentación de procesos.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Avanzado
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Concepto de P&ID</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Normas e Identificación</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. Planos de Plantas y Diagramas de Flujo de Procesos</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    En las industrias de procesos químicos, refinerías, tratamiento de aguas y manufactura automatizada, la documentación gráfica no solo abarca piezas mecánicas aisladas, sino complejos sistemas de tuberías que interconectan tanques, reactores, bombas y sistemas de control. El plano fundamental en esta disciplina es el **Diagrama de Tuberías e Instrumentación (P&ID - Piping and Instrumentation Diagram)**.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Siguiendo los criterios de diseño de plantas de la **UNED** y las guías técnicas de la **GTZ**, un diagrama P&ID es un esquema esquemático funcional (no a escala geométrica real) que detalla el hardware del proceso. Representa gráficamente la interconectividad física de las tuberías, la disposición de las válvulas, los equipos principales de transferencia térmica o de fluidos y los lazos de control instrumentados que monitorean variables como presión, temperatura y flujo.
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos de Codificación y Simbología (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    La representación de instrumentos y tuberías está estrictamente normalizada por el estándar **ANSI/ISA-S5.1** e **ISO 14617** para evitar ambigüedades en campo:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm text-gray-600">
+                    <div class="border border-gray-200 rounded-lg p-5 bg-gray-50">
+                        <span class="text-xs font-bold uppercase text-techCyan bg-techBlue/10 px-2 py-1 rounded">Identificación por Letras (Tagging)</span>
+                        <h3 class="font-bold text-techBlue text-lg mt-2">Designación Funcional</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed">
+                            Los instrumentos se representan mediante un círculo (globo) con un código de letras en su mitad superior. La **primera letra** define la variable medida (ej. <code>T</code> para Temperatura, <code>P</code> para Presión, <code>F</code> para Flujo). Las **letras sucesivas** indican la función del dispositivo (ej. <code>C</code> para Controlador, <code>I</code> para Indicador, <code>T</code> para Transmisor). La mitad inferior lleva el número de lazo de control (ej. <code>101</code>).
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-5 bg-gray-50">
+                        <span class="text-xs font-bold uppercase text-techBlue bg-techCyan/20 px-2 py-1 rounded">Líneas de Conexión</span>
+                        <h3 class="font-bold text-techCyan text-lg mt-2">Código de Trazos de Señales</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed">
+                            El fluido de proceso principal se dibuja con una **línea continua gruesa**. Las tuberías secundarias o de servicio son líneas continuas finas. Las señales de control tienen trazos diferenciados: una señal neumática se traza con líneas inclinadas cruzadas (<code>-///-</code>), y una señal eléctrica se representa de forma normalizada mediante una línea discontinua de trazo corto (<code>-----</code>).
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Simbología Gráfica Común en Diagramas de Flujo</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm border border-gray-200">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Elemento de Proceso</th>
+                                    <th class="p-3 font-semibold">Representación Gráfica Simplificada</th>
+                                    <th class="p-3 font-semibold">Código ISA Común</th>
+                                    <th class="p-3 font-semibold">Función Técnica</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600 font-mono text-xs">
+                                <tr class="hover:bg-gray-100 font-sans">
+                                    <td class="p-3 font-bold text-gray-900">Válvula de Globo</td>
+                                    <td class="p-3">Dos triángulos opuestos por el vértice con un punto en el centro.</td>
+                                    <td class="p-3"><code>V-GL</code></td>
+                                    <td class="p-3">Regulación precisa de caudal o estrangulamiento del fluido.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 font-sans">
+                                    <td class="p-3 font-bold text-gray-900">Transmisor de Presión</td>
+                                    <td class="p-3">Círculo limpio conectado por línea fina a la tubería.</td>
+                                    <td class="p-3 font-mono font-bold text-blue-600">PT</td>
+                                    <td class="p-3">Mide la presión hidrostática o de línea y envía una señal de datos.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 font-sans">
+                                    <td class="p-3 font-bold text-gray-900">Controlador Indicador de Temperatura</td>
+                                    <td class="p-3">Círculo con una línea horizontal continua dividiendo el centro.</td>
+                                    <td class="p-3 font-mono font-bold text-blue-600">TIC</td>
+                                    <td class="p-3">Instrumento montado en panel principal accesible al operador de la planta.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Creación de Diagramas de Flujo)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Proyecto Técnico Asistido:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante diseñará el diagrama P&ID para un **"Sistema de Control Automático de Nivel en un Tanque de Almacenamiento de Agua"**. Deberá insertar bloques normalizados de bombas centrifugas, líneas de proceso, un transmisor de nivel (LT) en campo y un lazo conectado por señal eléctrica hacia una válvula de control motorizada.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Delineación de Equipos Base e Infraestructura:</strong> Cree un bloque para el tanque de almacenamiento vertical utilizando líneas de contorno gruesas (`01_CONTORNOS`). Dibuje e inserte un símbolo simplificado de bomba centrífuga en la línea de succión inferior del tanque.</li>
+                    <li><strong>Trazado de Tuberías de Proceso Principal:</strong> Conecte el tanque y la bomba utilizando líneas de conducción continuas de grosor `0.50 mm`. Utilice flechas de flujo insertadas sobre las líneas para denotar el sentido del desplazamiento del agua.</li>
+                    <li><strong>Inserción de Bloques de Instrumentación (Círculos ISA):</strong> Dibuje un círculo de `10 mm` de diámetro acoplado al tanque. Use el comando de edición de atributos de texto para definir en mayúsculas la marca **`LT`** (Transmisor de Nivel) en la parte superior y **`202`** en la parte inferior. Dibuje un segundo círculo con línea divisoria horizontal en el espacio libre para representar el **`LIC-202`** (Controlador Indicador de Nivel en panel).</li>
+                    <li><strong>Trazado de Lazos de Señalización:</strong> Una el `LT-202` con el `LIC-202` mediante una línea de señal eléctrica (línea discontinua fina con tipo de línea `DASHED` en CAD). Finalmente, extienda una línea de señal neumática o eléctrica desde el controlador hacia el actuador de la válvula de compuerta colocada en la tubería de entrada. Guarde el entregable final con el formato normalizado: <code>Modulo13_Diagrama_PID.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación de Planos de Procesos</h2>
+                <p class="text-sm text-gray-600 mb-4">Mide tu capacidad de interpretación de esquemas e instrumentación industrial:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. Bajo el estándar internacional ANSI/ISA-S5.1, ¿qué variable física de proceso está midiendo y controlando un instrumento cuyo globo está codificado en el plano con el Tag "FIC-105"?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p23" class="mr-2">a) Fuerza (Force) e Inspección de Calidad.</label>
+                            <label class="block"><input type="radio" name="p23" class="mr-2">b) Flujo o Caudal (Flow), actuando como un Controlador Indicador de Flujo.</label>
+                            <label class="block"><input type="radio" name="p23" class="mr-2">c) Frecuencia Eléctrica en un motor de inducción.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. Si un globo circular de instrumentación en un plano P&ID aparece cruzado por una línea horizontal continua y limpia que pasa exactamente por su centro, ¿qué ubicación física nos indica este convenio para dicho elemento?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p24" class="mr-2">a) El instrumento está roto o fuera de servicio en la planta.</label>
+                            <label class="block"><input type="radio" name="p24" class="mr-2">b) El dispositivo está montado de forma local directamente en la tubería o campo de operaciones mecánicas.</label>
+                            <label class="block"><input type="radio" name="p24" class="mr-2">c) El instrumento está montado en un panel de control central de la sala de mandos, siendo plenamente accesible para el operador.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 13:\n1: b) La letra F define estrictamente la variable de Flujo (Caudal) de acuerdo con las tablas de codificación ISA.\n2: c) La línea horizontal central identifica un instrumento montado en panel principal o consola central accesible de forma interactiva.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
