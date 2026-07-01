@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 1: Interfaz de Usuario y Sistemas de Coordenadas</title>
+    <title>Módulo 1: Introducción al Dibujo Técnico e Instrumentación</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Configuración de la paleta de colores aprobada
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
         tailwind.config = {
             theme: {
                 extend: {
@@ -25,12 +25,12 @@
     <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
         <div class="max-w-5xl mx-auto">
             <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 1: Interfaz de Usuario y Sistemas de Coordenadas</h1>
-            <p class="text-indigo-200 mt-2 text-lg">Entorno de trabajo CAD y fundamentos del posicionamiento dimensional geométrico.</p>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 1: Introducción e Instrumentación</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Evolución histórica, campos de aplicación en ingeniería, normativas generales y manejo del instrumental tradicional de delineación.</p>
             
             <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
                 <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
-                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Técnico
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Inicial / Fundamentos
                 </div>
                 <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
                     <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
@@ -45,160 +45,136 @@
     <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
         
         <aside class="lg:col-span-1">
-    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
-        
-        <a href="index.html" class="flex items-center justify-center gap-2 bg-slate-100 hover:bg-techCyan/20 text-techBlue font-bold text-xs uppercase tracking-wider p-2.5 rounded-lg mb-4 transition border border-slate-200">
-            <svg class="w-4 h-4 text-techBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-            </svg>
-            Panel de Inicio
-        </a>
-        
-        <hr class="border-gray-100 mb-4">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                
+                <a href="index.html" class="flex items-center justify-center gap-2 bg-slate-100 hover:bg-techCyan/20 text-techBlue font-bold text-xs uppercase tracking-wider p-2.5 rounded-lg mb-4 transition border border-slate-200">
+                    <svg class="w-4 h-4 text-techBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                    Panel de Inicio
+                </a>
+                
+                <hr class="border-gray-100 mb-4">
 
-        <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
-        <nav class="space-y-2">
-            <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">1. Introducción</a>
-            <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">2. Fundamentos Teóricos</a>
-            <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">3. Práctica de Laboratorio</a>
-            <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">4. Auto-Evaluación</a>
-        </nav>
-    </div>
-</aside>
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">1. Concepto e Historia</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">2. Teoría de Instrumentos</a>
+                    <a href="#descargas" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600 bg-slate-50 text-techBlue">3. Material de Descarga</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">4. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">5. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
 
         <section class="lg:col-span-3 space-y-12">
             
             <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
-                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. Introducción al Entorno CAD y Configuración Inicial</h2>
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. El Lenguaje Gráfico Universal de la Ingeniería</h2>
                 <p class="text-gray-600 leading-relaxed mb-4">
-                    El dominio del Dibujo Técnico Computarizado comienza por comprender la interfaz del software de Diseño Asistido por Computadora (CAD). Siguiendo las metodologías de precisión técnica industrial (normas ISO y enfoques de escuelas especializadas como la <strong>GTZ</strong>), el manejo fluido del espacio de trabajo es un requisito crítico para garantizar la rapidez y exactitud en la delineación de planos de ingeniería.
+                    El dibujo técnico es el sistema de transmisión de ideas espaciales más riguroso del que dispone la ciencia. A diferencia del dibujo artístico, su meta no es la libre interpretación emocional, sino la comunicación unívoca de formas, dimensiones y características de fabricación de componentes mecánicos o arquitectónicos.
                 </p>
-                
-                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Elementos clave de la Interfaz Gráfica:</h3>
-                <ul class="list-disc pl-5 space-y-1 text-sm text-gray-600">
-                    <li><strong>Área de Dibujo:</strong> El espacio infinito bidimensional (o tridimensional) donde se generan los vectores geométricos.</li>
-                    <li><strong>Línea de Comandos:</strong> El núcleo operativo de control donde se introducen los comandos directos y las variables del sistema.</li>
-                    <li><strong>Barra de Estado:</strong> Herramientas auxiliares de precisión como el forzado de coordenadas (SNAP), rejilla (GRID) y rastreo ortogonal (ORTHO).</li>
-                    <li><strong>Cinta de Opciones (Ribbon):</strong> Organización modular de comandos de dibujo, modificación, capas y anotaciones.</li>
-                </ul>
+                <p class="text-gray-600 leading-relaxed">
+                    De acuerdo con los textos metodológicos de la **UNED** y la bibliografía de **Giesecke**, su evolución histórica camina en paralelo al desarrollo de la geometría descriptiva. Desde los bocetos renacentistas de maquinaria de Leonardo da Vinci hasta la estandarización industrial contemporánea bajo regulaciones **ISO**, el dibujo técnico actúa como el puente indispensable entre la fase conceptual de diseño y los procesos reales de manufactura en taller.
+                </p>
             </div>
 
             <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
-                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos de Instrumentación Analógica (2 Horas de Teoría)</h2>
                 <p class="text-gray-600 mb-6">
-                    Para trazar entidades geométricas exactas, el entorno CAD se fundamenta en el sistema de coordenadas cartesianas matemáticas. Es imperativo diferenciar los tres métodos de entrada numérico-vectorial:
+                    Antes del surgimiento de las estaciones informáticas CAD, la precisión en los tableros de dibujo dependía estrictamente del calibrado y mantenimiento de herramientas especializadas:
                 </p>
 
-                <div class="space-y-4">
-                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                        <h3 class="font-bold text-techBlue text-base">A. Coordenadas Cartesianas Absolutas</h3>
-                        <p class="text-sm text-gray-600 mt-1">
-                            Toman como referencia única el origen absoluto del plano bidimensional <code>(0,0)</code> (intersección fija de los ejes X e Y). 
-                            <strong>Formato de entrada:</strong> <code>X,Y</code> (Ejemplo: <code>50,30</code> ubica el punto exactamente a 50 unidades en horizontal y 30 en vertical desde el origen absoluto).
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-sm text-gray-600">
+                    <div class="border border-gray-200 rounded-lg p-5 bg-gray-50">
+                        <span class="text-xs font-bold uppercase text-techCyan bg-techBlue/10 px-2 py-1 rounded">Soportes y Guías</span>
+                        <h3 class="font-bold text-techBlue text-lg mt-2">Tecnigrafos, Regla T y Escuadras</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed">
+                            La regla T y el tecnígrafo garantizan la condición de paralelismo horizontal absoluto sobre el tablero. El juego de escuadras normalizado (escuadra de 45° y cartabón de 30°/60°) se desliza sobre estas guías para trazar perpendiculares y ángulos estandarizados con desviaciones menores a un minuto de arco.
                         </p>
                     </div>
 
-                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                        <h3 class="font-bold text-techBlue text-base">B. Coordenadas Cartesianas Relativas</h3>
-                        <p class="text-sm text-gray-600 mt-1">
-                            Toman como punto de origen de referencia el <strong>último punto marcado</strong> en la pantalla, en lugar del origen estático <code>(0,0)</code>.
-                            <strong>Formato de entrada:</strong> Se antepone el símbolo de arroba: <code>@X,Y</code> (Ejemplo: <code>@20,0</code> dibuja una línea horizontal de 20 unidades hacia la derecha desde el último punto establecido).
+                    <div class="border border-gray-200 rounded-lg p-5 bg-gray-50">
+                        <span class="text-xs font-bold uppercase text-techBlue bg-techCyan/20 px-2 py-1 rounded">Grafito Industrial</span>
+                        <h3 class="font-bold text-techCyan text-lg mt-2">Clasificación de Minas y Lapiceros</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed">
+                            La dureza del grafito se rige por una escala europea normalizada. Las minas **duras (H, 2H, 4H)** se emplean para líneas de guía delgadas y construcciones geométricas auxiliares que no deben resaltar. Las minas **blandas y medias (HB, B, 2B)** ofrecen un trazo oscuro y denso, ideal para el contorno definitivo de las piezas de taller.
                         </p>
-                    </div>
-
-                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                        <h3 class="font-bold text-techBlue text-base">C. Coordenadas Polares Relativas</h3>
-                        <p class="text-sm text-gray-600 mt-1">
-                            Definen la posición de un nuevo punto mediante una <strong>distancia lineal</strong> y un <strong>ángulo de inclinación</strong> con respecto al último punto marcado. Los ángulos se miden en sentido antihorario partiendo desde el eje X positivo (0° a la derecha).
-                            <strong>Formato de entrada:</strong> <code>@distancia&lt;ángulo</code> (Ejemplo: <code>@50&lt;45</code> dibuja una entidad con longitud de 50 unidades inclinada a 45 grados).
-                        </p>
-                    </div>
-                </div>
-
-                <div class="mt-8">
-                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Modos de Precisión y su Aplicación en Diseño</h4>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse text-xs md:text-sm">
-                            <thead>
-                                <tr class="bg-techBlue text-white">
-                                    <th class="p-3 font-semibold">Comando / Modo</th>
-                                    <th class="p-3 font-semibold">Función en el Flujo de Trabajo</th>
-                                    <th class="p-3 font-semibold">Ventaja Operativa</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200">
-                                <tr class="hover:bg-gray-100">
-                                    <td class="p-3 font-medium text-gray-900">Modo Ortogonal (ORTHO - F8)</td>
-                                    <td class="p-3 text-gray-600">Restringe el movimiento del cursor exclusivamente a los ejes rectos (0°, 90°, 180°, 270°).</td>
-                                    <td class="p-3 text-gray-600">Velocidad extrema en piezas prismáticas planas.</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100">
-                                    <td class="p-3 font-medium text-gray-900">Referencia a Objetos (OSNAP - F3)</td>
-                                    <td class="p-3 text-gray-600">Fuerza la captura exacta de puntos críticos geométricos (Puntos medios, extremos, centros, intersecciones).</td>
-                                    <td class="p-3 text-gray-600">Elimina errores acumulativos de aproximación visual.</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100">
-                                    <td class="p-3 font-medium text-gray-900">Entrada Dinámica (DYN - F12)</td>
-                                    <td class="p-3 text-gray-600">Muestra los campos de datos e instrucciones directamente flotando junto al cursor en pantalla.</td>
-                                    <td class="p-3 text-gray-600">Evita desviar continuamente la vista hacia la barra inferior.</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
 
+            <div id="descargas" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+    <h3 class="text-xl font-bold text-techBlue border-b border-gray-100 pb-2 mb-4">3. Archivos Técnicos del Módulo (Lectura Interactiva)</h3>
+    <p class="text-sm text-gray-600 mb-4">Seleccione el material que desea consultar. Se abrirá en un visualizador integrado en el navegador:</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="viewer_teoria1.html" class="flex items-center p-4 border border-gray-200 rounded-xl hover:border-techBlue hover:bg-blue-50/50 transition group">
+            <div class="p-3 bg-red-100 text-red-700 rounded-lg mr-4 group-hover:bg-red-200 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm text-gray-800 group-hover:text-techBlue transition">Manual de Teoría Módulo 1</h4>
+                <p class="text-xs text-gray-500 mt-0.5">Ver PDF interactivo en línea • Instrumentación clásica</p>
+            </div>
+        </a>
+
+        <a href="viewer_lab1.html" class="flex items-center p-4 border border-gray-200 rounded-xl hover:border-techCyan hover:bg-cyan-50/50 transition group">
+            <div class="p-3 bg-emerald-100 text-emerald-700 rounded-lg mr-4 group-hover:bg-emerald-200 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm text-gray-800 group-hover:text-techCyan transition">Guía de Laboratorio 1</h4>
+                <p class="text-xs text-gray-500 mt-0.5">Ver PDF interactivo en línea • Ejercicios de trazado</p>
+            </div>
+        </a>
+    </div>
+</div>
+
             <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
-                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Práctica Guiada en Computadora)</h2>
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Práctica de Laboratorio (2 Horas de Control de Calidad del Trazo Plano)</h2>
+                
                 <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
-                    <h4 class="font-bold text-techBlue text-sm">Desafío Técnico Práctico:</h4>
+                    <h4 class="font-bold text-techBlue text-sm">Consigna de Taller Analógico:</h4>
                     <p class="text-xs md:text-sm text-gray-700 mt-1">
-                        El estudiante configurará sus unidades de trabajo a milímetros e ingresará una secuencia de comandos numéricos controlados mediante la línea de comando para trazar el contorno cerrado perimetral exacto de un **"Perfil Guía de Deslizamiento"**.
+                        El alumno fijará una lámina formato A4 sobre el tablero y desarrollará una malla de precisión micrométrica empleando escuadras y juego de minas combinadas para dominar el control de presión y paralelismo lineal.
                     </p>
                 </div>
 
-                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Instrucciones de Programación y Trazado:</h3>
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
                 <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
-                    <li><strong>Configuración Inicial:</strong> Inicie un dibujo en blanco basado en la plantilla estándar <code>acadiso.dwt</code>. Escriba el comando <code>UNIDADES</code> (UNITS) y valide la precisión lineal en 0.00 mm.</li>
-                    <li><strong>Punto de Partida Absoluto:</strong> Active el comando <code>LINEA</code> (LINE o L). En la solicitud del primer punto, digite el origen absoluto de taller: <code>100,100</code> y presione Enter.</li>
-                    <li><strong>Trazado Perimetral Relativo:</strong> Introduzca secuencialmente las siguientes coordenadas para construir el contorno rígido de la pieza:
-                        <ul class="list-none pl-4 py-2 font-mono text-xs bg-gray-900 text-green-400 rounded-md my-2 space-y-1">
-                            <li>@80,0 &lt;-- Desplazamiento horizontal base</li>
-                            <li>@0,30 &lt;-- Escalón vertical derecho</li>
-                            <li>@40&lt;135 &lt;-- Tramo inclinado con coordenadas polares</li>
-                            <li>@0,20 &lt;-- Altura lateral superior</li>
-                            <li>@-50,0 &lt;-- Retorno horizontal superior</li>
-                        </ul>
-                    </li>
-                    <li><strong>Cierre de Geometría:</strong> Escriba la letra <code>C</code> (CLOSE / Cerrar) en la línea de comandos para que el software autocomplete el tramo final de forma exacta regresando al origen original <code>(100,100)</code>. Guarde el archivo final como <code>Módulo1_Apellido_Nombre.dwg</code>.</li>
+                    <li><strong>Alineación del Soporte Papel:</strong> Disponga la hoja sobre el tablero. Apoye la regla T en el canto izquierdo, verifique la horizontalidad del papel y fije las esquinas de la hoja utilizando cinta adhesiva de baja adherencia para evitar desgarros en la fibra.</li>
+                    <li><strong>Trazado de Guías Auxiliares (Líneas Finas):</strong> Con un portaminas de dureza **2H** o **4H**, realice marcas espaciadas a intervalos estrictos de `5 mm` en el margen inferior de la hoja. Deslice el cartabón a 90° apoyado sobre la regla T para trazar líneas verticales de construcción técnica continua.</li>
+                    <li><strong>Cruces Angulares de Precisión:</strong> Apoye la escuadra de 45° y trace rectas oblicuas partiendo de los nodos base. Mantenga una presión homogénea en el lápiz y gírelo levemente sobre su propio eje durante la traslación para asegurar que el grosor de la línea se mantenga constante a `0.2 mm` a lo largo de todo el recorrido.</li>
+                    <li><strong>Definición de Contornos Fuertes:</strong> Use un lápiz de dureza intermedia **HB** para remarcar las líneas de borde finales y completar el cuadro de rotulación (cajetín). Rotule sus nombres y apellidos empleando caligrafía técnica normalizada sin ayuda de plantillas.</li>
                 </ol>
             </div>
 
             <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
-                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Teórica</h2>
-                <p class="text-sm text-gray-600 mb-4">Comprueba tu asimilación conceptual antes de remitir tus archivos al servidor escolar:</p>
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">5. Banco de Evaluación Diagnóstica</h2>
+                <p class="text-sm text-gray-600 mb-4">Mide tu nivel de comprensión técnica de la instrumentación clásica:</p>
                 
                 <div class="space-y-4">
                     <div class="border-b border-gray-100 pb-4">
-                        <p class="font-medium text-sm text-gray-800">1. ¿Qué carácter o símbolo le indica al software CAD que debe procesar una coordenada como "Relativa" al último punto marcado?</p>
+                        <p class="font-medium text-sm text-gray-800">1. ¿Para cuál de las siguientes tareas técnicas está especialmente indicada la utilización de un lápiz de graduación de grafito tipo 4H en el taller de dibujo?</p>
                         <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
-                            <label class="block"><input type="radio" name="p1" class="mr-2">a) El símbolo de menor que (&lt;).</label>
-                            <label class="block"><input type="radio" name="p1" class="mr-2">b) El símbolo de arroba (@).</label>
-                            <label class="block"><input type="radio" name="p1" class="mr-2">c) El signo de porcentaje (%).</label>
+                            <label class="block"><input type="radio" name="p1" class="mr-2">a) Para realizar el rayado final de los contornos visibles de una pieza de fundición.</label>
+                            <label class="block"><input type="radio" name="p1" class="mr-2">b) Para trazar líneas auxiliares de construcción geométrica y ejes de simetría delgados que no deben destacar en la lectura primaria.</label>
+                            <label class="block"><input type="radio" name="p1" class="mr-2">c) Para rellenar el texto del cajetín de firmas.</label>
                         </div>
                     </div>
 
                     <div class="border-b border-gray-100 pb-4">
-                        <p class="font-medium text-sm text-gray-800">2. Si ingresa la instrucción @40&lt;180 en el comando de línea, ¿hacia qué dirección Cardinal se trazará el vector?</p>
+                        <p class="font-medium text-sm text-gray-800">2. Al trabajar con el juego de escuadras tradicionales de dibujo (escuadra y cartabón), ¿cuál es la combinación de ángulos internos exactos que presenta el cartabón normalizado?</p>
                         <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
-                            <label class="block"><input type="radio" name="p2" class="mr-2">a) Hacia la derecha (Este).</label>
-                            <label class="block"><input type="radio" name="p2" class="mr-2">b) Hacia arriba (Norte).</label>
-                            <label class="block"><input type="radio" name="p2" class="mr-2">c) Hacia la izquierda (Oeste).</label>
+                            <label class="block"><input type="radio" name="p2" class="mr-2">a) 45°, 45° y 90°.</label>
+                            <label class="block"><input type="radio" name="p2" class="mr-2">b) 30°, 60° y 90°.</label>
+                            <label class="block"><input type="radio" name="p2" class="mr-2">c) 15°, 75° y 90°.</label>
                         </div>
                     </div>
                 </div>
 
-                <button onclick="alert('Clave de respuestas oficiales Módulo 1:\n1: b) El símbolo de arroba (@).\n2: c) Hacia la izquierda (Oeste) dado el giro de 180°.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                <button onclick="alert('Clave de respuestas oficiales Módulo 1:\n1: b) Las minas de la serie H son duras, depositan poco grafito y son la norma para líneas auxiliares finas.\n2: b) El cartabón es un triángulo escaleno cuyos ángulos característicos miden exactamente 30, 60 y 90 grados.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
                     Verificar Respuestas Correctas
                 </button>
             </div>
