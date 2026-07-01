@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 9: Conjuntos, Despieces y Listas de Materiales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 9: Conjuntos, Despieces y Listas de Materiales</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Documentación técnica de sistemas mecánicos, numeración de marcas de componentes y tablas BOM normalizadas.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Técnico
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Planos de Montaje</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Marcas e ISO 7573</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. Planos de Conjunto y Despiece en la Industria</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    En el entorno de producción real, las máquinas y mecanismos no constan de una sola pieza, sino de un ensamblaje coordinado de multitud de componentes mecánicos independientes. Para que el departamento de montaje pueda ensamblar la unidad correctamente, o para que el taller fabrique cada elemento individual, se requiere de una documentación gráfica jerarquizada.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Un **Plano de Conjunto** (o de ensamble) ilustra la máquina completa en su posición operativa de trabajo, mostrando la relación funcional y de posición entre sus piezas. Por el contrario, el **Plano de Despiece** detalla de forma aislada e individual la geometría, tolerancias y acabados de cada componente que requiere ser fabricado desde cero en el taller, omitiendo los elementos comerciales estandarizados (como rodamientos o pernos).
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    La vinculación inequívoca entre el plano gráfico de conjunto y los datos técnicos de fabricación se realiza mediante dos herramientas normalizadas obligatorias reguladas por las normas **ISO 7573** e **ISO 7200**:
+                </p>
+
+                <div class="space-y-4 mb-8">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">A. Numeración de Marcas (Globos de Referencia)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-1 leading-relaxed">
+                            Cada componente diferente dentro del plano de conjunto debe identificarse mediante un número correlativo encerrado en un círculo o globo (o bien mediante un texto limpio). De este número parte una **línea de referencia fina** que termina en una flecha si toca el contorno de la pieza, o en un **punto relleno (punto de marca)** si termina en el interior de la superficie del componente. Las marcas deben alinearse de forma ordenada en filas o columnas para mantener la claridad visual.
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">B. Lista de Materiales / BOM (Bill of Materials)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-1 leading-relaxed">
+                            Es una tabla estructurada que se sitúa obligatoriamente de forma adyacente o directamente arriba del cuadro de rotulación (cajetín). A diferencia de otras tablas de ingeniería, la lista de materiales **se numera e incrementa de abajo hacia arriba**, de modo que la primera marca (01) se encuentra inmediatamente pegada a la línea superior del cajetín, permitiendo añadir filas hacia arriba si el mecanismo se expande en el futuro.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Estructura Estándar de una Lista de Materiales Industrial (BOM)</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm border border-gray-200">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold w-16">Marca</th>
+                                    <th class="p-3 font-semibold w-20">Cantidad</th>
+                                    <th class="p-3 font-semibold">Denominación / Componente</th>
+                                    <th class="p-3 font-semibold">Norma / Modelo Comercial</th>
+                                    <th class="p-3 font-semibold">Material / Observaciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600 font-mono text-xs">
+                                <tr class="bg-gray-50">
+                                    <td class="p-3 font-bold text-gray-900">03</td>
+                                    <td class="p-3">4</td>
+                                    <td class="p-3">Tornillo Hexagonal M10 x 35</td>
+                                    <td class="p-3">ISO 4017</td>
+                                    <td class="p-3">Acero Calidad 8.8 (Pavonado)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-gray-900">02</td>
+                                    <td class="p-3">1</td>
+                                    <td class="p-3">Casquillo de Guía Cilíndrico</td>
+                                    <td class="p-3">Plano Despiece: BR-02-04</td>
+                                    <td class="p-3">Bronce Fosforoso (CuSn8)</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="p-3 font-bold text-gray-900">01</td>
+                                    <td class="p-3">1</td>
+                                    <td class="p-3">Cuerpo Principal de la Brida</td>
+                                    <td class="p-3">Plano Despiece: BR-01-04</td>
+                                    <td class="p-3">Fundición Gris (GJL-250)</td>
+                                </tr>
+                                <tr class="bg-indigo-900 text-white font-sans text-center text-xs">
+                                    <td colspan="5" class="p-2 font-bold uppercase tracking-wider">LÍNEA SUPERIOR DEL CUADRO DE DATOS (CAJETÍN DE ROTULACIÓN)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de CAD Avanzado)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Proyecto Técnico de Integración:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante abrirá un modelo en espacio modelo que contiene el ensamble seccionado de un **"Soporte de Rodamiento para Árbol de Transmisión"** que consta de una base de fundición, un casquillo de bronce y tornillos de sujeción. El desafío es generar las marcas de referencia alineadas y estructurar la tabla BOM sobre el bloque del cajetín.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Configuración de Directrices Múltiples (comando ESTILOMULTIDIR / MLEADERSTYLE):</strong> Cree un estilo de directriz llamado `Marcas_Conjunto`. En la pestaña de *Formato*, elija un extremo de línea fina con un **Punto Relleno** (Dot) de `3 mm` para señalar el interior de las piezas. En la pestaña de *Contenido*, seleccione el tipo de directriz como **Bloque** y elija el bloque predefinido **Círculo** (Circle) con un tamaño de texto de `3.5 mm`.</li>
+                    <li><strong>Inserción y Alineación de Globos de Marca (comando MULTIDIR / MLEADER):</strong> Coloque las marcas en el plano. Apunte al centro de la base de fundición y asigne el número **1**; repita apuntando al casquillo con el número **2** y al perno con el número **3**. Utilice la herramienta `ALINEARMULTIDIR` (`MLEADERALIGN`) para forzar a que los tres círculos queden perfectamente verticales a la derecha del dibujo, evitando el cruce entre sus líneas de referencia.</li>
+                    <li><strong>Modelado de la Tabla de Materiales (comando TABLA / TABLE):</strong> Cree una tabla CAD. Ingrese al estilo de tabla y defina las columnas normalizadas estudadas en la sección técnica. Configure la inserción de datos de abajo hacia arriba desde el menú de propiedades del objeto.</li>
+                    <li><strong>Vincular la Tabla al Espacio Papel:</strong> Ajuste las filas superiores de la tabla de modo que encajen exactamente sobre el contorno del cuadro de rotulación en el Layout. Rellene los campos de texto con letras mayúsculas limpias en la capa `06_TEXTOS`. Guarde y compile el entregable final con el nombre: <code>Modulo9_Planos_Conjunto_BOM.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Teórico-Práctica</h2>
+                <p class="text-sm text-gray-600 mb-4">Valida tus competencias técnicas en gestión de planos y documentación de ingeniería:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. De acuerdo con las normas ISO 7573, ¿en qué orden vertical se deben añadir y numerar las filas de componentes en una Lista de Materiales (BOM) situada encima del cajetín de un plano?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p15" class="mr-2">a) De arriba hacia abajo, comenzando la marca 1 en el extremo superior de la lámina.</label>
+                            <label class="block"><input type="radio" name="p15" class="mr-2">b) De abajo hacia arriba, situándose la marca 01 inmediatamente en contacto con la línea superior del cajetín.</label>
+                            <label class="block"><input type="radio" name="p15" class="mr-2">c) En orden alfabético según el nombre del material, sin importar la posición.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. Si la línea de referencia de un globo de marca de componente termina en el espacio interior (superficie del material) de una pieza en lugar de tocar una arista exterior, ¿qué símbolo debe llevar en su extremo final por convenio técnico?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p16" class="mr-2">a) Una punta de flecha abierta a 30°.</label>
+                            <label class="block"><input type="radio" name="p16" class="mr-2">b) Un punto de marca (pequeño punto o círculo negro macizo relleno).</label>
+                            <label class="block"><input type="radio" name="p16" class="mr-2">c) Una cruz ortogonal inclinada.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 9:\n1: b) De abajo hacia arriba. Esto permite añadir de forma limpia nuevos elementos mecánicos si el conjunto crece.\n2: b) Un punto de marca relleno. Las flechas quedan reservadas de manera estricta para cuando la línea termina exactamente sobre la arista exterior.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
