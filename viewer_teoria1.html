@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador: Manual de Teoría Módulo 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { techBlue: '#1e3a8a', techCyan: '#06b6d4', techGray: '#f8fafc' } } } }
+    </script>
+</head>
+<body class="bg-techGray font-sans antialiased flex flex-col h-screen">
+
+    <header class="bg-techBlue text-white p-4 shadow-md flex justify-between items-center z-10">
+        <div>
+            <span class="text-xs text-techCyan font-bold uppercase block tracking-wider">Módulo 1: Fundamentos</span>
+            <h1 class="text-md md:text-lg font-bold">Manual de Teoría: Instrumentación Analógica</h1>
+        </div>
+        <a href="modulo1.html" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs py-2 px-4 rounded-lg transition flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Volver al Módulo 1
+        </a>
+    </header>
+
+    <main class="flex-grow w-full bg-zinc-800 relative">
+        <embed src="downloads/M1_Teoria_Instrumentacion.pdf" type="application/pdf" class="w-full h-full border-none">
+    </main>
+
+</body>
+</html>
