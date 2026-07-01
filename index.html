@@ -3,219 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dibujo Técnico Computarizado - Inicio</title>
-    <link class="styles" rel="stylesheet" href="style.css">
+    <title>Plataforma Educativa: Dibujo Técnico Industrial y Diseño Asistido</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="badge-nivel">Nivel Técnico</span>
-            <h1>Dibujo Técnico Computarizado</h1>
-            <p>Aprende las competencias clave para dibujar, leer e interpretar planos y gráficos técnicos asistidos por computadora (CAD).</p>
-            <div class="hero-buttons">
-                <a href="#temario" class="btn btn-primario">Ver Plan de Estudios</a>
-                <a href="#investigacion" class="btn btn-secundario">Zona de Investigación</a>
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-16 px-6 shadow-md relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#06b6d4_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full target:">Entorno Virtual de Aprendizaje</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-3 tracking-tight">Dibujo Técnico Computarizado</h1>
+            <p class="text-indigo-200 mt-4 text-lg md:text-xl max-w-3xl leading-relaxed">
+                Portal de Ingeniería Gráfica Normalizada. Domine la delineación industrial en 2D, tolerancias dimensionales, diagramas de procesos e instrumentación y modelado de sólidos paramétricos en 3D.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 mt-8 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                    <span class="font-bold text-techCyan mr-2">Estructura:</span> 16 Módulos
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                    <span class="font-bold text-techCyan mr-2">Marco Normativo:</span> ISO / UNE / ANSI-ISA
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                    <span class="font-bold text-techCyan mr-2">Acreditación:</span> Equivalente UNED / GTZ
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="container">
-
-        <section class="dashboard-metricas" aria-label="Resumen del curso">
-            <div class="metric-card">
-                <h3>Duración Total</h3>
-                <p class="metric-value">16 Módulos</p>
+    <main class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6 max-h-[80vh] overflow-y-auto">
+                <h3 class="font-bold text-techBlue text-xs uppercase tracking-wider mb-4 px-2 border-b border-gray-100 pb-2">Plan de Estudios Completo</h3>
+                <nav class="space-y-1 text-xs md:text-sm">
+                    <span class="block px-2 text-[10px] font-bold text-gray-400 uppercase tracking-tight mt-2">Fase 1: Fundamentos Básicos</span>
+                    <a href="modulo1.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M1: Introducción e Instrumental</a>
+                    <a href="modulo2.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M2: Formatos, Líneas y Rotulación</a>
+                    <a href="modulo3.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M3: Geometría Métrica Aplicada</a>
+                    <a href="modulo4.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M4: Sistemas de Proyección Ortogonal</a>
+                    
+                    <span class="block px-2 text-[10px] font-bold text-gray-400 uppercase tracking-tight mt-4">Fase 2: Representación Avanzada</span>
+                    <a href="modulo5.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M5: Vistas Diédricas y Auxiliares</a>
+                    <a href="modulo6.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M6: Perspectivas Axonométricas</a>
+                    <a href="modulo7.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M7: Cortes, Secciones y Roturas</a>
+                    <a href="modulo8.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M8: Teoría Fundamental de Acotación</a>
+                    
+                    <span class="block px-2 text-[10px] font-bold text-gray-400 uppercase tracking-tight mt-4">Fase 3: Normalización Industrial</span>
+                    <a href="modulo9.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M9: Elementos de Fijación y Roscas</a>
+                    <a href="modulo10.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M10: Tolerancias y Ajustes</a>
+                    <a href="modulo11.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M11: Acabados Superficiales (Rugosidad)</a>
+                    <a href="modulo12.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M12: Uniones Soldadas y Elementos Fijos</a>
+                    
+                    <span class="block px-2 text-[10px] font-bold text-gray-400 uppercase tracking-tight mt-4">Fase 4: Ingeniería de Plantas y 3D</span>
+                    <a href="modulo13.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M13: Instalaciones y Diagramas P&ID</a>
+                    <a href="modulo14.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M14: Conjuntos, Despiece y BOM</a>
+                    <a href="modulo15.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M15: Modelado de Sólidos 3D</a>
+                    <a href="modulo16.html" class="block p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium text-gray-600">M16: Proyección de Vistas 2D desde 3D</a>
+                </nav>
             </div>
-            <div class="metric-card">
-                <h3>Por Módulo</h3>
-                <p class="metric-value">2h Teo / 2h Lab</p>
-            </div>
-            <div class="metric-card">
-                <h3>Disponibilidad</h3>
-                <p class="metric-value">Acceso Libre</p>
-            </div>
-        </section>
+        </aside>
 
-        <section class="seccion-objetivos">
-            <h2>Objetivos del Aprendizaje</h2>
-            <p>Al finalizar este trayecto formativo, el participante habrá desarrollado capacidades técnicas específicas orientadas al entorno laboral industrial, arquitectónico y de ingeniería:</p>
-            <ul class="lista-objetivos">
-                <li><strong>Dibujar:</strong> Construir geometrías bidimensionales y modelos tridimensionales con precisión milimétrica bajo normativas internacionales (ISO / ANSI).</li>
-                <li><strong>Leer:</strong> Descomponer vistas e identificar la disposición espacial de los objetos representados.</li>
-                <li><strong>Interpretar:</strong> Comprender las anotaciones técnicas, tolerancias, acotados y escalas en planos de manufactura o construcción.</li>
-            </ul>
-        </section>
-
-        <section id="investigacion" class="seccion-filosofia">
-            <h2>Comunidad, Investigación y Mejora Continua</h2>
-            <p>Este curso es un entorno vivo de aprendizaje. Más allá de asimilar el material disponible, se promueve que cada estudiante sea un investigador activo. Buscamos la optimización constante de nuestros recursos mediante el debate técnico y el <strong>aporte de nuevo material de valor</strong> (bloques CAD, planos reales de estudio o guías avanzadas).</p>
-        </section>
-
-        <section id="temario">
-            <h2 class="titulo-seccion">Estructura del Plan de Estudios</h2>
+        <section class="lg:col-span-3 space-y-8">
             
-            <div class="buscador-contenedor">
-                <input type="text" id="buscador-modulos" placeholder="🔎 Buscar módulos por palabras clave (ej. Capas, 3D, Isométrico)...">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">Bienvenido al Curso de Ingeniería Gráfica</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Este entorno virtual ha sido diseñado para guiar al estudiante de manera metódica e interactiva a través del lenguaje universal de la ingeniería: **el dibujo técnico**. Desde el trazado básico de líneas normalizadas hasta la manipulación avanzada de archivos CAD paramétricos en 3D, cada bloque temático responde a las demandas reales de los talleres mecánicos y oficinas de diseño.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    La estructura del material de estudio asimila los rigurosos esquemas pedagógicos alemanes de la **GTZ (Cooperación Técnica)** para asegurar habilidades prácticas en fabricación, en simbiosis con el marco conceptual avanzado dictado por los departamentos de ingeniería de la **UNED** y la bibliografía de referencia de **Giesecke**.
+                </p>
             </div>
 
-            <div class="grid-modulos" id="contenedor-modulos">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                    <div class="w-10 h-10 bg-techBlue/10 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-6 h-6 text-techBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-techBlue text-sm uppercase">1. Normalización Absoluta</h4>
+                    <p class="text-xs text-gray-500 mt-2 leading-relaxed">Cada plano desarrollado cumplirá de forma milimétrica con los estándares de representación de vistas e indicación de medidas ISO.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                    <div class="w-10 h-10 bg-techCyan/10 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-6 h-6 text-techCyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-techBlue text-sm uppercase">2. Criterio de Taller</h4>
+                    <p class="text-xs text-gray-500 mt-2 leading-relaxed">No dibujamos líneas abstractas. Aprendemos a interpretar tolerancias geométricas, rugosidades y soldaduras pensando en el tornero o fresador.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                    <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-techBlue text-sm uppercase">3. Vanguardia Digital</h4>
+                    <p class="text-xs text-gray-500 mt-2 leading-relaxed">Culminamos la ruta formativa migrando del entorno plano tradicional hacia el modelado de sólidos 3D inteligentes e integrados.</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-techBlue mb-3">Instrucciones para el Aprendizaje Eficiente</h3>
+                <p class="text-sm text-gray-600 mb-4">
+                    Para sacar el máximo provecho de este portal interactivo, se le recomienda seguir la secuencia cronológica establecida en el menú lateral:
+                </p>
+                <blockquote class="border-l-4 border-techCyan bg-slate-50 p-4 text-xs md:text-sm text-gray-600 italic rounded-r-lg">
+                    "La ingeniería gráfica exige constancia. Cada módulo cuenta con un bloque de 2 Horas de Teoría normalizada y un taller práctico de Laboratorio Asistido por Computadora de 2 Horas. Al concluir cada sección, realice el banco de auto-evaluación para validar sus competencias antes de saltar al siguiente nivel técnico."
+                </blockquote>
                 
-                <a href="modulo1.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="interfaz coordenadas cad inicio introduccion" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 01 🔗 (Clic para ingresar)</span>
-                        <h3>Interfaz de Usuario y Sistemas de Coordenadas</h3>
-                        <p>Configuración del espacio de trabajo y uso del sistema cartesiano y polar absoluto/relativo.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo2.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="geometria lineas circulos arcos construccion" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 02 🔗 (Clic para ingresar)</span>
-                        <h3>Construcciones Geométricas Básicas</h3>
-                        <p>Trazado de líneas, arcos, tangencias, empalmes y bisección de ángulos.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo3.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="capas layers propiedades colores lineas" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 03 🔗 (Clic para ingresar)</span>
-                        <h3>Organización del Dibujo: Capas (Layers)</h3>
-                        <p>Uso correcto de capas, tipos de líneas normalizadas, espesores y organización estructural.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo4.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="vistas proyecciones diidro ortogonal dibujo" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 04 🔗 (Clic para ingresar)</span>
-                        <h3>Vistas Ortogonales y Proyecciones Técnicas</h3>
-                        <p>Sistemas de proyección Europeo y Americano. Obtención de plantas, alzados y perfiles.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo5.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="acotacion acotado dimensiones medidas normas iso ansi" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 05 🔗 (Clic para ingresar)</span>
-                        <h3>Fundamentos de Acotación y Dimensionamiento</h3>
-                        <p>Aplicación de normas internacionales para la colocación correcta de cotas, líneas de extensión y directrices.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo6.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="tolerancias ajustes precision gd&t dimensions mecanica" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 06 🔗 (Clic para ingresar)</span>
-                        <h3>Sistemas de Tolerancias y Ajustes</h3>
-                        <p>Lectura e interpretación de tolerancias dimensionales, geométricas y tipos de ajustes en piezas de precisión.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo7.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="secciones cortes roturas vistas internas rayados" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 07 🔗 (Clic para ingresar)</span>
-                        <h3>Secciones, Cortes y Roturas</h3>
-                        <p>Representación de detalles internos mediante cortes totales, escalonados y semicortes bajo norma.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo8.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="isometrico axonometrico perspectiva 2.5d rejilla" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 08 🔗 (Clic para ingresar)</span>
-                        <h3>Dibujo Isométrico y Axonométrico (2.5D)</h3>
-                        <p>Técnicas de dibujo bidimensional simulando profundidad mediante planos y elipses isométricas.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo9.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="bloques librerias componentes estandar insercion reutilizar" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 09 🔗 (Clic para ingresar)</span>
-                        <h3>Bloques Estándar y Librerías de Componentes</h3>
-                        <p>Creación y gestión de bloques de elementos repetitivos para optimizar el tiempo de dibujo.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo10.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="bloques dinamicos atributos parametros acciones tablas data" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 10 🔗 (Clic para ingresar)</span>
-                        <h3>Bloques Dinámicos y Atributos de Bloque</h3>
-                        <p>Automatización de componentes CAD mediante parámetros inteligentes y extracción de textos a tablas.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo11.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="textos tablas rotulacion cajetín rotulo membrete bom" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 11 🔗 (Clic para ingresar)</span>
-                        <h3>Textos, Tablas y Cuadros de Rotulación</h3>
-                        <p>Configuración de notas anotativas, tablas de materiales (BOM) y diseño del cajetín normado.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo12.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="ensamble conjunto despiezado globos planos mecanicos" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 12 🔗 (Clic para ingresar)</span>
-                        <h3>Dibujo de Conjunto y Despiezado</h3>
-                        <p>Lectura e interpretación de planos de montaje, numeración de componentes y despieces mecánicos.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo13.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="referencias externas xref vinculos planos colaborativo" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 13 🔗 (Clic para ingresar)</span>
-                        <h3>Introducción a las Referencias Externas (XREFs)</h3>
-                        <p>Estrategias de dibujo colaborativo mediante la vinculación y superposición de planos externos.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo14.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="escalas modelo papel layout viewport ventanas" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 14 🔗 (Clic para ingresar)</span>
-                        <h3>Escalas, Espacio Modelo y Espacio Papel</h3>
-                        <p>Dominio del entorno de dibujo (Model) frente al de maquetación (Layout) empleando ventanas gráficas.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo15.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="normalizacion formatos laminas ploteo pdf ctb estilos" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 15 🔗 (Clic para ingresar)</span>
-                        <h3>Normalización, Formatos de Lámina y PDF Técnico</h3>
-                        <p>Configuración de espesores de plumillas (CTB) y exportación final a formatos de impresión normalizados.</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
-                <a href="modulo16.html" style="text-decoration: none; color: inherit; display: flex;">
-                    <article class="modulo-card" data-keywords="3d modelado solidos impresion layout plot" style="width: 100%; cursor: pointer;">
-                        <span class="modulo-numero">Módulo 16 🔗 (Clic para ingresar)</span>
-                        <h3>Modelado 3D Esencial y Layout de Impresión</h3>
-                        <p>Introducción a extrusiones de sólidos y preparación de planos finales para impresión a escala (Ploteo).</p>
-                        <div class="horas-badge">📖 2h Teoría | 💻 2h Laboratorio</div>
-                    </article>
-                </a>
-
+                <div class="mt-6 flex justify-start">
+                    <a href="modulo1.html" class="bg-techBlue hover:bg-indigo-800 text-white font-bold text-sm py-3 px-6 rounded-lg transition shadow-md flex items-center">
+                        Comenzar con el Módulo 1
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
             </div>
-        </section>
 
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 - Repositorio Educativo de Dibujo Técnico Computarizado</p>
-        <p>Código abierto alojado en GitHub - Diseñado para el Aprendizaje Técnico y la Mejora Continua</p>
+    <footer class="bg-gray-900 text-gray-400 text-center py-8 mt-16 border-t border-gray-800 text-xs md:text-sm">
+        <div class="max-w-6xl mx-auto px-4 space-y-2">
+            <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Todos los derechos reservados.</p>
+            <p class="text-gray-600 text-[11px]">Material pedagógico homologado y adaptado según normas internacionales de estandarización industrial.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
