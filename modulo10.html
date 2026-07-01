@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 10: Modelado Tridimensional (3D) y Vistas Asociativas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 10: Modelado 3D y Vistas Asociativas</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Transición del dibujo 2D al volumen sólido, operaciones paramétricas y proyección automatizada bajo norma ISO 16792.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Avanzado
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Entorno Tridimensional</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Operaciones Sólidas y ISO</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. El Paradigma del Modelado Sólido Tridimensional</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Hasta este punto de la plataforma, los conceptos se han enfocado en representar objetos tridimensionales utilizando proyecciones e ingenierías bidimensionales (2D) en un papel. Sin embargo, los flujos modernos de diseño mecánico industrial e industria 4.0 operan a la inversa: se modela primero la pieza de forma volumétrica real en un espacio tridimensional (X, Y, Z) y a partir de ese prototipo digital se derivan los planos técnicos necesarios.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    De acuerdo con los estándares internacionales de definición digital de productos (**ISO 16792**) y las directrices avanzadas de la **UNED**, este método introduce el concepto de **Asociatividad Bi-direccional**. Esto significa que el modelo 3D y sus planos 2D están interconectados de forma viva: cualquier cambio en las dimensiones del sólido tridimensional modificará instantáneamente y de forma automática las vistas, cortes y cotas del plano de fabricación, erradicando los descuidos humanos por rediseño en planta.
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    El software CAD avanzado construye volúmenes complejos empleando geometrías primarias y transformaciones vectoriales controladas matemáticamente por los siguientes pilares:
+                </p>
+
+                <div class="space-y-4 mb-8">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">A. El Boceto (Sketch) y Restricciones</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Es un perfil bidimensional plano dibujado sobre un eje o cara que sirve de semilla para generar el sólido. Requiere de **restricciones geométricas** (paralelismo, tangencia, concentricidad) y **dimensionales** (cotas paramétricas) para que el software controle su comportamiento geométrico con precisión absoluta.
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">B. Operaciones de Generación Volumétrica</h3>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-xs md:text-sm text-gray-600">
+                            <li><strong>Extrusión (Extrude):</strong> Desplaza un boceto plano perpendicularmente en el espacio para darle una profundidad lineal fija.</li>
+                            <li><strong>Revolución (Revolve):</strong> Hace girar un perfil plano un determinado ángulo (ej. 360°) alrededor de un eje central para originar cuerpos de revolución (ejes, poleas, cilindros).</li>
+                        </ul>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">C. Operaciones Booleanas de Modificación</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Combinan múltiples cuerpos sólidos intersecados: **Unión** (fusiona bloques en un solo objeto), **Sustracción / Diferencia** (usa un volumen para restar o calar material de otro, como al taladrar un orificio) e **Intersección** (conserva únicamente el volumen común compartido).
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Flujo de Generación de Planos desde Modelos 3D</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Tipo de Vista CAD</th>
+                                    <th class="p-3 font-semibold">Comportamiento Asociativo</th>
+                                    <th class="p-3 font-semibold">Uso Industrial Recomendado</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Vista Base (Alzado)</td>
+                                    <td class="p-3">Se calcula proyectando ortogonalmente el sólido 3D de acuerdo con el sistema seleccionado (Primer o Tercer cuadrante).</td>
+                                    <td class="p-3">Controlar la vista principal de la lámina técnica de fabricación.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Vista Seccional Asociativa</td>
+                                    <td class="p-3">El software corta el modelo 3D por una línea de plano indicada y dibuja automáticamente el rayado y las aristas visibles expuestas.</td>
+                                    <td class="p-3">Eliminar el trazado manual de líneas de sombreado y ocultas en geometrías interiores complejas.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Proyección Isométrica</td>
+                                    <td class="p-3">Muestra una axonométrica limpia con renderizado de líneas del bloque 3D orientado espacialmente.</td>
+                                    <td class="p-3">Colocarse en una esquina superior del plano para guiar al operario en la interpretación del volumen real.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Modelado y Generación Proyectiva)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Proyecto Final de Laboratorio:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante diseñará desde cero el modelo tridimensional sólido de un **"Soporte de Guía de Eje con Brida Base y Orificio Central con Chaflán"**. Una vez consolidado el volumen 3D, utilizará el espacio Layout para proyectar de forma completamente automatizada las vistas diédricas normalizadas e integrará una isométrica aclaratoria.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Modelado de la Base por Extrusión:</strong> Encienda el entorno de Modelado 3D. Sitúese en el plano de planta (XY) y dibuje un rectángulo con las medidas de la brida. Aplique restricciones de simetría. Invoque el comando `EXTRUSION` (`EXTRUDE`) y asigne una altura de `15 mm` hacia el eje positivo Z para originar el primer bloque sólido.</li>
+                    <li><strong>Creación del Cuerpo Cilindrico por Revolución o Adición:</strong> Seleccione la cara superior del bloque base como nuevo plano de trabajo. Dibuje un círculo concéntrico que representará la caja del eje. Extruya este círculo hacia arriba otros `40 mm`. Asegúrese de unir ambos sólidos mediante la operación booleana `UNION` (`UNION`) para unificar la pieza en un solo volumen continuo.</li>
+                    <li><strong>Perforación Mecánica mediante Sustracción:</strong> Dibuje un círculo concéntrico interior en la cara superior con el diámetro nominal del eje. Utilice el comando `PRESIONARTIRAR` (`PRESSPULL`) o extruya el círculo atravesando por completo la pieza hacia abajo. Aplique la operación booleana `SUSTRACCION` (`SUBTRACT`), seleccionando primero el cuerpo principal (para conservarlo) y luego el cilindro interior (para substraerlo y generar el orificio pasante).</li>
+                    <li><strong>Generación de las Vistas Asociativas en el Layout:</strong> Cámbiese a una pestaña de espacio papel (`Layout`) limpia que posea un formato y cajetín normalizados. Ejecute el comando avanzado de proyección de vistas **`VISTABASE` (`VIEWBASE`)** desde el Espacio de Modelo. Posicione la vista frontal (Alzado) abajo a la izquierda, desplace el cursor hacia arriba para proyectar automáticamente la Planta, y hacia la derecha para obtener el Perfil. Genere una proyección en diagonal para fijar la **Vista Isométrica 3D**. El software calculará instantáneamente todas las aristas visibles y ocultas en las capas correspondientes de forma automática. Guarde el proyecto final de cierre como: <code>Modulo10_Sólido3D_Y_Vistas.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Teórico-Práctica Final</h2>
+                <p class="text-sm text-gray-600 mb-4">Valida tus competencias tecnológicas avanzadas en entornos de diseño paramétrico 3D:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. ¿Qué beneficio técnico describe el principio de "Asociatividad Bi-direccional" presente en los sistemas modernos de software CAD mecánico paramétrico?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p17" class="mr-2">a) Que permite exportar el plano técnico a formatos de imagen como JPG de forma rápida.</label>
+                            <label class="block"><input type="radio" name="p17" class="mr-2">b) Que cualquier alteración dimensional realizada sobre el modelo sólido 3D actualiza de forma automática e inmediata las vistas, cortes y cotas en el plano técnico 2D vinculado.</label>
+                            <label class="block"><input type="radio" name="p17" class="mr-2">c) Que el archivo se puede abrir al mismo tiempo en dos ordenadores diferentes.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. Si se desea modelar un componente con simetría cilíndrica de revolución compleja, como una polea de transmisión de banda trapezoidal o un émbolo de pistón, ¿cuál es la técnica operativa de modelado más eficiente?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p18" class="mr-2">a) Crear decenas de bloques rectangulares mediante extrusión y soldarlos uno a uno.</label>
+                            <label class="block"><input type="radio" name="p18" class="mr-2">b) Dibujar un boceto que represente la mitad de la sección transversal de la polea y aplicar el comando de Revolución (Revolve) a 360° en torno a un eje central de giro.</label>
+                            <label class="block"><input type="radio" name="p18" class="mr-2">c) Dibujar la polea en perspectiva caballera manual y aplicarle un sombreado realista.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 10:\n1: b) La asociatividad automática garantiza que el plano técnico y el modelo 3D mantengan consistencia total de ingeniería ante cambios de diseño.\n2: b) La operación de Revolución es la metodología óptima y normalizada para dar volumen instantáneo a cuerpos geométricos simétricos con ejes de rotación.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
