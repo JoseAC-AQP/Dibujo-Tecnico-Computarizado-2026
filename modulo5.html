@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5: Cortes, Secciones y Detalles en Planos Mecánicos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 5: Cortes, Secciones y Detalles</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Visualización interior de componentes, rayados normalizados y detalles a escala ampliada.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Técnico
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Necesidad de los Cortes</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Tipos de Corte y Convenios</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. La Necesidad de los Cortes y Secciones</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Cuando una pieza mecánica presenta una gran complejidad interior (canales de refrigeración, vaciados escalonados, roscas concéntricas o alojamientos para rodamientos), las líneas ocultas discontinuas estudiadas en los módulos anteriores se vuelven densas y confusas. Esto dificulta la acotación y la posterior fabricación en el taller metalmecánico.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Para resolver esto, la norma **ISO 128-40** introduce el concepto de **Corte**. Se simula el paso de un plano de corte imaginario que atraviesa la pieza, retirando la porción del bloque que se encuentra entre el observador y dicho plano. De este modo, las cavidades internas quedan expuestas a la vista como aristas llenas y visibles, facilitando una lectura limpia, directa y libre de errores interpretativos.
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    En la delineación técnica industrializada se aplican diferentes configuraciones de corte según la simetría y morfología de la pieza:
+                </p>
+
+                <div class="space-y-4 mb-8">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">A. Corte Total (Sección Total)</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            El plano de corte atraviesa longitudinal o transversalmente la pieza de extremo a extremo en una trayectoria recta única. Es el método estándar para piezas asimétricas o cilindros con mecanizados internos continuos (**GTZ T11**).
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">B. Semicorte / Media Sección (Corte al Cuarto)</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Se utiliza exclusivamente en **piezas simétricas**. El plano de corte penetra solo hasta el eje de simetría central, retirando una cuarta parte de la pieza. Esto permite mostrar en una sola vista tanto la morfología exterior (en una mitad) como los detalles internos (en la otra mitad) sin sobrecargar el plano (**GTZ T12**).
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">C. Corte Escalonado (Por Planos Sucesivos)</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            El plano de corte realiza quiebres ortogonales a 90° para pasar por zonas de interés situadas a diferentes distancias (por ejemplo, atravesando tres agujeros desalineados). En la vista de corte, estos quiebres no se dibujan; la superficie se representa continua y unificada.
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">D. Detalles Ampliados</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Cuando una zona muy pequeña de la pieza (como un entalle de rosca o un canal de chaveta) no se puede acotar adecuadamente debido a la escala general del plano, se encierra en un círculo imaginario y se dibuja por separado en una vista dedicada con una escala significativamente mayor (ej. Escala 5:1).
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Convenios de Representación Normalizada</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Elemento de Control</th>
+                                    <th class="p-3 font-semibold">Norma de Representación en CAD</th>
+                                    <th class="p-3 font-semibold">Propiedad / Capa</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Línea de Plano de Corte</td>
+                                    <td class="p-3">Línea de trazo y punto fina, con **extremos gruesos** acompañados de flechas indicadoras de la dirección de mirada y letras identificadoras (ej. A-A).</td>
+                                    <td class="p-3 font-mono">0.25 mm (Centro) / 0.70 mm (Extremos)</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Patrón de Rayado (Hatch)</td>
+                                    <td class="p-3">Líneas continuas finas inclinadas preferentemente a **45°** respecto a los ejes principales o contornos de la pieza (Patrón estándar `ANSI31`).</td>
+                                    <td class="p-3 font-mono">Capa `05_RAYADOS` (0.18 - 0.25 mm)</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Excepciones de Corte</td>
+                                    <td class="p-3">**Elementos longitudinales macizos** (ejes macizos, nervios de refuerzo, tornillos, pasadores y esferas) **NUNCA se cortan longitudinalmente** ni llevan rayado, aun cuando el plano pase sobre ellos.</td>
+                                    <td class="p-3">Permanecen en vista exterior maciza.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Práctica en Estación CAD)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Desafío Práctico Aplicado:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante recibirá un bloque de dibujo técnico que contiene las vistas exteriores (Alzado y Planta) de una **"Brida de Acoplamiento Hidráulico con Caja de Rodamiento y Cuatro Orificios de Sujeción"**. El ejercicio consiste en transformar la vista de Alzado en un **Corte Total A-A** y generar un detalle ampliado del canal de estanqueidad.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Trazado del Plano de Corte:</strong> En la vista de Planta, dibuje el plano de corte que pasa exactamente por el centro geométrico de la brida utilizando una línea fina de trazo y punto. Refuerce los extremos con líneas gruesas y coloque las flechas indicando el sentido de proyección junto a las letras **A**.</li>
+                    <li><strong>Conversión de Aristas Interiores:</strong> En la vista de Alzado, seleccione todas las líneas ocultas (`04_OCULTAS`) que representan la caja del rodamiento y los canales de paso de fluido, y cámbielas a la capa `01_CONTORNOS` (aristas visibles). Elimine las líneas de contorno exterior que desaparecen tras el corte del plano.</li>
+                    <li><strong>Aplicación del Sombreado Automático (SOMBREADO / HATCH):</strong> Invoque el comando `SOMBREADO` (`BHATCH` o `H`). Seleccione el patrón predefinido **ANSI31**. Configure el ángulo en 0 (para que mantenga la inclinación natural de 45° del patrón) y asigne una escala que permita una separación limpia de las líneas (ej. entre 1.0 y 2.5). Haga clic dentro de las islas de material sólido cortado. Asegúrese de que el sombreado se ubique en la capa `05_RAYADOS`.</li>
+                    <li><strong>Creación del Detalle Ampliado (Detalle B):</strong> Identifique el canal de alojamiento del anillo o-ring. Dibuje un círculo imaginario alrededor de él. Copie esa sección geométrica fuera de las vistas del plano y aplique el comando `ESCALA` (`SCALE`) con un factor de `4.0` (Escala 4:1). Coloque el título bajo el detalle: **DETALLE B - ESCALA 4:1**. Guarde el archivo final como: <code>Modulo5_Corte_Y_Detalle.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Teórico-Práctica</h2>
+                <p class="text-sm text-gray-600 mb-4">Evalúa tu nivel de asimilación normativa e industrial:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. Si el plano de corte atraviesa longitudinalmente a lo largo un eje macizo de transmisión de potencia o un perno roscado de unión, ¿cómo se deben representar estos componentes en la vista de corte?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p7" class="mr-2">a) Se deben rellenar por completo con un patrón de rayado cruzado a 90°.</label>
+                            <label class="block"><input type="radio" name="p7" class="mr-2">b) No se cortan; se dejan en vista exterior maciza sin ningún tipo de rayado.</label>
+                            <label class="block"><input type="radio" name="p7" class="mr-2">c) Se eliminan por completo del plano para despejar la vista.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. Al dibujar un Corte Escalonado (quiebres sucesivos a 90° para pasar por cavidades desalineadas), ¿cómo se representan los planos donde se produce el cambio de dirección en la vista de corte final?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p8" class="mr-2">a) Se dibuja una línea gruesa continua para marcar la separación del escalón.</label>
+                            <label class="block"><input type="radio" name="p8" class="mr-2">b) No se dibuja ninguna línea divisoria; la superficie cortada se representa de forma continua y unificada.</label>
+                            <label class="block"><input type="radio" name="p8" class="mr-2">c) Se interrumpe el sombrado de la pieza dejando un espacio en blanco.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 5:\n1: b) No se cortan longitudinalmente por convenio normativo (ISO 128).\n2: b) No se dibuja ninguna línea divisoria; el corte escalonado se muestra continuo como si estuviera en un solo plano.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
