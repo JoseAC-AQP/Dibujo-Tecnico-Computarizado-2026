@@ -72,7 +72,7 @@
             <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
                 <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. El Lenguaje Gráfico Universal de la Ingeniería</h2>
                 <p class="text-gray-600 leading-relaxed mb-4">
-                    El dibujo técnico es el sistema de transmisión de ideas espaciales más riguroso del que dispone la ciencia. A diferencia del dibujo artístico, su meta no es la libre interpretación emocional, sino la comunicación unívoca de formas, dimensions y características de fabricación de componentes mecánicos o arquitectónicos.
+                    El dibujo técnico es el sistema de transmisión de ideas espaciales más riguroso del que dispone la ciencia. A diferencia del dibujo artístico, su meta no es la libre interpretación emocional, sino la comunicación unívoca de formas, dimensiones y características de fabricación de componentes mecánicos o arquitectónicos.
                 </p>
                 <p class="text-gray-600 leading-relaxed">
                     De acuerdo con los textos metodológicos de la **UNED** y la bibliografía de **Giesecke**, su evolución histórica camina en paralelo al desarrollo de la geometría descriptiva. Desde los bocetos renacentistas de maquinaria de Leonardo da Vinci hasta la estandarización industrial contemporánea bajo regulaciones **ISO**, el dibujo técnico actúa como el puente indispensable entre la fase conceptual de diseño y los procesos reales de manufactura en taller.
@@ -201,7 +201,7 @@
 
             <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
                 <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">5. Banco de Evaluación Diagnóstica</h2>
-                <p class="text-sm text-gray-600 mb-4">Mide tu nivel de comprensión técnica de la instrumentación clásica:</p>
+                <p class="text-sm text-gray-600 mb-4">Mide tu nivel de comprensión técnica de la instrumentación clásica y los conceptos iniciales:</p>
                 
                 <div class="space-y-4">
                     <div class="border-b border-gray-100 pb-4">
@@ -221,9 +221,36 @@
                             <label class="block"><input type="radio" name="p2" class="mr-2">c) 15°, 75° y 90°.</label>
                         </div>
                     </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">3. Si en un plano técnico normalizado lee la indicación de escala "Escala 1:5", ¿qué interpretación geométrica y de taller debe darle al dibujo?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p3" class="mr-2">a) Se trata de una escala de ampliación donde el objeto real es 5 veces más pequeño que el papel.</label>
+                            <label class="block"><input type="radio" name="p3" class="mr-2">b) Se trata de una escala de reducción donde cada unidad medida en el plano representa 5 unidades reales en el objeto fabricado.</label>
+                            <label class="block"><input type="radio" name="p3" class="mr-2">c) Significa que las cotas indicadas numéricamente deben multiplicarse por 5 antes de maquinar la pieza.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">4. Conforme a las normas internacionales de formatos de papel de la serie ISO A (derivados del formato de origen A0), ¿cuáles son las dimensiones milimétricas exactas de la hoja de trabajo A4 utilizada en este laboratorio?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p4" class="mr-2">a) 420 mm x 594 mm.</label>
+                            <label class="block"><input type="radio" name="p4" class="mr-2">b) 210 mm x 297 mm.</label>
+                            <label class="block"><input type="radio" name="p4" class="mr-2">c) 148 mm x 210 mm.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">5. Al trabajar en un entorno CAD, ¿cuál es la sintaxis correcta para ingresar un punto utilizando un sistema de Coordenadas Polares Relativas partiendo del último punto marcado?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p5" class="mr-2">a) @[Distancia],[Ángulo]</label>
+                            <label class="block"><input type="radio" name="p5" class="mr-2">b) #[Distancia]&lt;[Ángulo]</label>
+                            <label class="block"><input type="radio" name="p5" class="mr-2">c) @[Distancia]&lt;[Ángulo]</label>
+                        </div>
+                    </div>
                 </div>
 
-                <button onclick="alert('Clave de respuestas oficiales Módulo 1:\n1: b) Las minas de la serie H son duras, depositan poco grafito y son la norma para líneas auxiliares finas.\n2: b) El cartabón es un triángulo escaleno cuyos ángulos característicos miden exactamente 30, 60 y 90 grados.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                <button onclick="alert('Clave de respuestas oficiales Módulo 1:\n\n1: b) Las minas de la serie H son duras y se usan para líneas auxiliares finas.\n2: b) El cartabón presenta ángulos característicos de 30, 60 y 90 grados.\n3: b) 1:5 es reducción; indica que el plano es 5 veces menor que la realidad (Cotas numéricas no cambian).\n4: b) El formato A4 normalizado mide exactamente 210 mm por 297 mm.\n5: c) La sintaxis formal utiliza @ para la condición relativa y el signo menor que (<) para preceder el ángulo.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
                     Verificar Respuestas Correctas
                 </button>
             </div>
