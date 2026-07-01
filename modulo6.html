@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 6: Acotación Normalizada e Indicación de Tolerancias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 6: Acotación Normalizada y Tolerancias</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Definición métrica de componentes, reglas de dimensionamiento ISO y sistemas de ajuste industrial.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Técnico
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Principios de Acotación</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Elementos y Tolerancias</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. Principios Fundamentales de la Acotación</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Dibujar la geometría exacta de una pieza metálica es inútil para los procesos de manufactura si no se definen explícitamente sus dimensiones. La **Acotación** es el conjunto de líneas, cifras, símbolos y notas que determinan la medida lineal o angular de un componente de ingeniería, bajo los lineamientos de la norma internacional **ISO 129-1**.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Un plano correctamente acotado debe permitir la fabricación de la pieza sin que el operario del taller tenga que deducir o medir directamente sobre el papel. De acuerdo con las metodologías de la **GTZ** y los textos de la **UNED**, cada cota debe aparecer una sola vez en el plano, colocada en la vista que muestre de forma más clara la característica geométrica correspondiente, evitando la redundancia y el cruce innecesario de líneas auxiliares.
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    Para configurar correctamente los estilos de acotación en un entorno CAD, es necesario comprender la anatomía normalizada de una cota y el impacto de las variaciones físicas en la producción en masa:
+                </p>
+
+                <div class="space-y-4 mb-8">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">A. Elementos de una Cota Normalizada</h3>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-sm text-gray-600">
+                            <li><strong>Línea de cota:</strong> Línea fina paralela a la dimensión que se mide. Sus extremos terminan en flechas de punta cerrada y rellena.</li>
+                            <li><strong>Líneas auxiliares de cota:</strong> Líneas perpendiculares a la característica que sobresalen ligeramente (aprox. 1 a 2 mm) más allá de la línea de cota para delimitar el alcance de la medición.</li>
+                            <li><strong>Cifra de cota (Texto):</strong> Valor numérico expresado de forma obligatoria en **milímetros (mm)** para planos mecánicos, situado centrado y por encima de la línea de cota.</li>
+                        </ul>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">B. Símbolos Modificadores de Geometría</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Antepuestos a la cifra de cota, simplifican la lectura evitando vistas adicionales: 
+                            <code>Ø</code> para Diámetro, <code>R</code> para Radio, <code>□</code> para formas Cuadradas, y <code>SR / SØ</code> para superficies Esféricas.
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">C. Concepto de Tolerancia Dimensional (ISO 286)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-1 leading-relaxed">
+                            En el mundo real, las máquinas herramienta no pueden producir piezas idénticas con precisión matemática absoluta; siempre existen variaciones de tamaño. La **Tolerancia** es el margen de error permitido entre una medida máxima y una mínima en el que la pieza sigue siendo funcional. Se puede expresar mediante desviaciones numéricas directas (ej. <code>40 +0.02 / -0.01</code>) o códigos alfanuméricos ISO de ajuste (ej. <code>50H7</code> para un agujero o <code>50g6</code> para un eje transmisiones) para garantizar la intercambiabilidad en planta (**GTZ Metal 1 - T15**).
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Criterios de Aplicación y Buenas Prácticas</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Técnica de Acotación</th>
+                                    <th class="p-3 font-semibold">Regla Estándar de Ejecución</th>
+                                    <th class="p-3 font-semibold">Capa CAD Recomendada</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Acotación en Serie (Cadena)</td>
+                                    <td class="p-3">Las cotas se colocan una a continuación de la otra. Se usa cuando la acumulación de tolerancias no afecta la funcionalidad general de la pieza.</td>
+                                    <td class="p-3 font-mono">03_COTAS (0.25 mm)</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Acotación en Paralelo (Base común)</td>
+                                    <td class="p-3">Las cotas parten de un mismo plano de referencia o cara base. Evita por completo la acumulación de errores de mecanizado en el taller.</td>
+                                    <td class="p-3 font-mono">03_COTAS (0.25 mm)</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Distancias Mínimas</td>
+                                    <td class="p-3">La primera cota debe separarse como mínimo **10 mm** del contorno exterior de la pieza. Las cotas sucesivas paralelas deben distanciarse al menos **7 mm** entre sí.</td>
+                                    <td class="p-3 text-xs text-gray-500">Configurado en Estilo de Cota</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Práctica en Estación CAD)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Problema Técnico de Manufactura:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante recibirá un archivo digital con el trazado del contorno de un **"Eje de Transmisión Escalonado con una Ranura de Chaveta"**. El plano carece de dimensiones y propiedades de texto. El objetivo del ejercicio es configurar el Administrador de Estilos de Cota e integrar el dimensionamiento y las tolerancias requeridas para su fabricación en el torno.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Configuración del Estilo de Cota (comando ACOESTILO / DIMSTYLE):</strong> Cree un estilo personalizado llamado `ISO_Mecanica`. En la pestaña de *Líneas*, defina el color por capa. En la pestaña de *Símbolos y Flechas*, elija la flecha cerrada rellena con un tamaño de `2.5 mm`. En la pestaña de *Texto*, asigne una altura de `2.5 mm` colocada horizontalmente y alineada con la línea de cota. En *Unidades Principales*, ajuste la precisión a `0.00` decimales.</li>
+                    <li><strong>Acotación de Longitudes Totales y Escalonadas:</strong> Seleccione la capa `03_COTAS`. Utilizando los comandos de cota lineal (`DIMLINEAR`), trace las longitudes de los escalones del eje utilizando la técnica de acotación en paralelo desde la cara izquierda para evitar errores acumulativos.</li>
+                    <li><strong>Inserción de Símbolos de Diámetro:</strong> Mida los diámetros de las secciones cilíndricas. Dado que estas cotas se aplican sobre una vista bidimensional plana, haga doble clic sobre el texto de la cota e introduzca el código de control `%%c` para forzar la aparición del símbolo de diámetro normalizado (`Ø`) antes del valor métrico.</li>
+                    <li><strong>Aplicación de Tolerancias de Ajuste:</strong> Para el diámetro donde se alojará el rodamiento de precisión, acceda a las Propiedades de la cota. Busque la sección de *Tolerancias*, cambie el método a *Desviación* o *Límites*, e ingrese los valores de desviación superior (`+0.015`) e inferior (`-0.005`). Verifique visualmente el contraste y guarde el documento finalizado como: <code>Modulo6_Acotacion_Y_Tolerancia.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Formativa</h2>
+                <p class="text-sm text-gray-600 mb-4">Valida tus competencias técnicas de normalización métrica:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. Al acotar planos de piezas para ingeniería mecánica, si no se especifica ninguna nota contraria, ¿en qué unidad de medida se asume que están expresadas por defecto todas las cifras numéricas?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p9" class="mr-2">a) Centímetros (cm).</label>
+                            <label class="block"><input type="radio" name="p9" class="mr-2">b) Milímetros (mm).</label>
+                            <label class="block"><input type="radio" name="p9" class="mr-2">c) Pulgadas decimales (in).</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. ¿Por qué es una práctica desaconsejada utilizar la acotación en serie (cadena) en un plano de componentes críticos que requieren encajar con precisión?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p10" class="mr-2">a) Porque consume demasiado espacio físico en la lámina de dibujo.</label>
+                            <label class="block"><input type="radio" name="p10" class="mr-2">b) Porque acumula los errores de tolerancia de cada operación de corte, arruinando el ajuste final de la pieza.</label>
+                            <label class="block"><input type="radio" name="p10" class="mr-2">c) Porque el software CAD no admite el trazado de cotas consecutivas.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 6:\n1: b) Milímetros (mm) es la unidad estándar de la industria mecánica mundial (ISO).\n2: b) Porque acumula los errores de tolerancia individuales, invalidando la precisión geométrica general.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
