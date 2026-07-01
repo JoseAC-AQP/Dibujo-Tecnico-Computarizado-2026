@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 11: Sistemas de Ajustes y Tolerancias Geométricas (GD&T)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 11: Ajustes y Tolerancias Geométricas</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Sistemas de ajuste ISO, tolerancias de forma, orientación y localización (GD&T) según ISO 1101.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Avanzado
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Concepto de Ajuste</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Simbología GD&T</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. Sistemas de Ajuste e Intercambiabilidad Mecánica</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Cuando dos piezas mecánicas deben acoplarse (como un eje dentro de un casquillo), la relación resultante entre sus medidas antes del montaje determina el tipo de acoplamiento o **Ajuste**. El sistema de tolerancias ISO (**ISO 286**) define códigos alfanuméricos donde las letras mayúsculas se reservan para agujeros (ej. *H7*) y las minúsculas para ejes (ej. *g6*).
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Siguiendo los lineamientos de la **GTZ (Sección T6/T15)** y la **UNED**, el diseño industrial requiere clasificar estos acoplamientos en tres tipos fundamentales: **Ajuste con juego** (el eje es siempre menor que el agujero, permitiendo rotación), **Ajuste con apriete o interferencia** (el eje es mayor que el agujero, requiriendo prensa para el montaje) y **Ajuste indeterminado o de transición** (donde las zonas de tolerancia se superponen).
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Tolerancias Geométricas de Forma, Orientación y Localización</h2>
+                <p class="text-gray-600 mb-6">
+                    A menudo, controlar el tamaño dimensional de una pieza no basta para garantizar su montaje. Si un cilindro es perfectamente paralelo en sus diámetros pero está doblado como un plátano, no entrará en su alojamiento. Las **Tolerancias Geométricas (GD&T)** reguladas por la norma **ISO 1101** especifican el margen de error permitido en la forma y orientación de las características de la pieza.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">A. El Marco de Control de Características (Feature Control Frame)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-1 leading-relaxed">
+                            Es un rectángulo dividido en compartimentos que se conecta a la superficie mediante una línea de directriz. El primer compartimento contiene el **símbolo geométrico** (ej. posición, planeidad); el segundo, el **valor de la tolerancia** precedido por el símbolo de diámetro si la zona es cilíndrica; y los compartimentos siguientes indican las letras de las superficies de referencia o **Datums** (ej. *A*, *B*).
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Clasificación de Tolerancias Geométricas Comunes</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold w-1/4">Tipo de Tolerancia</th>
+                                    <th class="p-3 font-semibold w-1/4">Característica</th>
+                                    <th class="p-3 font-semibold w-16 text-center">Símbolo</th>
+                                    <th class="p-3 font-semibold">Significado en Taller</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900" rowspan="2">De Forma (No requieren Datum)</td>
+                                    <td class="p-3">Planeidad</td>
+                                    <td class="p-3 text-center font-mono font-bold text-techBlue">▱</td>
+                                    <td class="p-3">Todos los puntos de la superficie deben estar contenidos entre dos planos paralelos separados por el valor de la tolerancia.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3">Cilindricidad</td>
+                                    <td class="p-3 text-center font-mono font-bold text-techBlue">cylinder</td>
+                                    <td class="p-3">La superficie considerada debe estar comprendida entre dos cilindros coaxiales cuya diferencia de radios es la tolerancia.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900" rowspan="2">De Orientación y Lugar (Requieren Datum)</td>
+                                    <td class="p-3">Perpendicularidad</td>
+                                    <td class="p-3 text-center font-mono font-bold text-techBlue">⊥</td>
+                                    <td class="p-3">La superficie o eje debe estar en un ángulo estricto de 90° respecto a un plano de referencia (Datum A).</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3">Posición (Localización)</td>
+                                    <td class="p-3 text-center font-mono font-bold text-techBlue">⌖</td>
+                                    <td class="p-3">Determina cuánto puede desviarse el centro de un agujero de su posición teórica exacta respecto a los planos de referencia.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Tolerado Dinámico en CAD)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Problema Técnico de Ajuste Industrial:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El alumno debe intervenir el plano técnico de una **"Tapa de Cilindro Neumático con Agujero de Guía"**. El plano requiere la indicación del sistema de ajuste ISO para un rodamiento, la designación de una cara como referencia primaria (Datum A) y la aplicación de una tolerancia geométrica de perpendicularidad en el agujero para evitar el desalineamiento del pistón.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Inserción del Símbolo de Referencia (Datum):</strong> Invoque el comando `TOLERANCIAGEOM` o configure una directriz. Dibuje el triángulo de base normalizado apoyado sobre la cara plana inferior de la tapa y asígnele la letra **A**. Esta superficie será el plano de verificación metrológica en planta.</li>
+                    <li><strong>Configuración del Marco de Control (comando TOLERANCIA / TOLERANCE):</strong> Inicie el comando de tolerancias. En la ventana emergente, seleccione el símbolo de **Perpendicularidad (⊥)**. En el campo de valor de tolerancia, ingrese `0.02`. En la casilla del Datum Primario, escriba la letra **A**.</li>
+                    <li><strong>Anclaje del Bloque de Control de Características:</strong> Ubique el marco de control generado adjunto o debajo de la cota lineal del diámetro del agujero. Esto indica que el eje central del agujero debe ser perpendicular al Datum A con un margen máximo de `0.02 mm`.</li>
+                    <li><strong>Acotación del Ajuste ISO Dimensional:</strong> Edite el texto de la cota del agujero donde se aloja el vástago. Añada el código de ajuste industrial **H7** inmediatamente después de la medida nominal (ej. `Ø30H7`). Guarde el archivo técnico finalizado con el nombre: <code>Modulo11_Ajustes_y_GDandT.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación de Metrología y Tolerancias</h2>
+                <p class="text-sm text-gray-600 mb-4">Pone a prueba tus conocimientos en tolerancias geométricas y códigos de ajuste:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. En la codificación de un sistema de ajustes normalizado ISO (ej. 45H7/g6), ¿qué criterio se utiliza para distinguir los códigos correspondientes al elemento hembra (agujero) de los del elemento macho (eje)?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p19" class="mr-2">a) El agujero utiliza números impares y el eje números pares.</label>
+                            <label class="block"><input type="radio" name="p19" class="mr-2">b) Las letras mayúsculas designan de forma estricta al agujero (H7) y las minúsculas al eje (g6).</label>
+                            <label class="block"><input type="radio" name="p19" class="mr-2">c) Los códigos del eje siempre van precedidos por el signo de diámetro (Ø).</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. ¿Cuál de las siguientes afirmaciones describe de manera correcta una característica de las tolerancias geométricas de forma (como la planeidad ▱ o la cilindricidad) dentro de un plano técnico?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p20" class="mr-2">a) Requieren obligatoriamente indicar una superficie o eje de referencia (Datum).</label>
+                            <label class="block"><input type="radio" name="p20" class="mr-2">b) No requieren de ninguna superficie de referencia o Datum, ya que evalúan la geometría del elemento de forma aislada.</label>
+                            <label class="block"><input type="radio" name="p20" class="mr-2">c) Solo se aplican a piezas plásticas obtenidas por inyección.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 11:\n1: b) Las letras mayúsculas se reservan para agujeros y las minúsculas para ejes (ISO 286).\n2: b) Las tolerancias de forma evalúan las desviaciones geométricas intrínsecas del elemento en sí mismo, por lo que no emplean letras de referencia (Datums).')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
