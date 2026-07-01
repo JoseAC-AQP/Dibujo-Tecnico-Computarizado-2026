@@ -3,472 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 1: Interfaz y Coordenadas Avanzado</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .bloque-teoria, .bloque-laboratorio, .bloque-evaluacion, .bloque-simulador {
-            background-color: var(--color-card);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-        .bloque-teoria { border-left: 5px solid var(--color-secundario); }
-        .bloque-laboratorio { border-left: 5px solid #10b981; }
-        .bloque-evaluacion { border-left: 5px solid var(--color-acento); }
-        .bloque-simulador { border-left: 5px solid #8b5cf6; } /* Púrpura para interactivos */
-        
-        .codigo-cad {
-            background-color: #1e293b;
-            color: #38bdf8;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 1rem;
-            border-radius: 4px;
-            margin: 1rem 0;
-            display: block;
-            overflow-x: auto;
-        }
-        .tabla-tecnica {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-        .tabla-tecnica th, .tabla-tecnica td {
-            border: 1px solid #e2e8f0;
-            padding: 0.75rem;
-            text-align: left;
-            font-size: 0.95rem;
-        }
-        .tabla-tecnica th {
-            background-color: #f1f5f9;
-            color: var(--color-primario);
-        }
-        .btn-volver {
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            color: var(--color-secundario);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .caja-descarga {
-            background-color: #f8fafc;
-            border: 1px dashed #cbd5e1;
-            border-radius: 6px;
-            padding: 1.2rem;
-            margin: 1.5rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .btn-descarga {
-            background-color: #ef4444;
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1.2rem;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        /* Estilos de Cuestionario Avanzado */
-        .pregunta {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background-color: #f8fafc;
-            border-radius: 6px;
-        }
-        .pregunta p { font-weight: 600; margin-bottom: 0.5rem; }
-        .opcion { display: block; margin: 0.4rem 0; cursor: pointer; }
-        .feedback { margin-top: 0.5rem; font-size: 0.85rem; font-weight: bold; display: none; }
-
-        /* Estilos del Simulador Canvas */
-        .canvas-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-        canvas {
-            background-color: #1e293b;
-            border: 2px solid #475569;
-            border-radius: 4px;
-            cursor: crosshair;
-        }
-        .valores-simulador {
-            background-color: #f1f5f9;
-            padding: 1.5rem;
-            border-radius: 6px;
-            min-width: 280px;
-        }
-        .val-linea { font-family: monospace; font-size: 1.1rem; margin-bottom: 0.5rem; color: #0f172a; }
-        .val-linea span { font-weight: bold; color: var(--color-secundario); }
-
-        .lista-directrices { padding-left: 1.2rem; margin: 1rem 0; font-size: 0.9rem; }
-        .lista-directrices li { margin-bottom: 0.4rem; }
-    </style>
-</head>
-<body>
-
-    <header class="hero">
-        <div class="hero-content">
-            <span class="badge-nivel">Módulo 01 - Entorno Profesional</span>
-            <h1>Interfaz de Usuario y Sistemas de Coordenadas</h1>
-            <p>Carga horaria exigida: 2 Horas de Teoría y 2 Horas de Taller de Laboratorio Práctico.</p>
-        </div>
-    </header>
-
-    <main class="container">
-        <a href="index.html" class="btn-volver">← Volver al Menú Principal</a>
-
-        <section class="bloque-teoria">
-            <h2>📖 1. Componente Teórico (Duración: 2 Horas)</h2>
-            <br>
-            <h3>1.1 El Entorno de Trabajo CAD Industrial</h3>
-            <p>Para dominar la representación gráfica digital, es fundamental asimilar el entorno de trabajo estándar. Los sistemas CAD modernos centralizan sus operaciones en la <strong>Cinta de Opciones (Ribbon)</strong>. Sin embargo, el núcleo de la velocidad técnica radica en el uso de la <strong>Línea de Comandos</strong> en la parte inferior, la cual optimiza el flujo operativo mediante comandos abreviados (*alias*).</p>
-            
-            <br>
-            <h3>1.2 Sistemas de Coordenadas Geométricas Normalizadas</h3>
-            <p>La exactitud dimensional exige referenciar los elementos dentro de un espacio de vectores indexados matemáticamente en un plano bidimensional (Ejes X e Y):</p>
-            
-            <table class="tabla-tecnica">
-                <thead>
-                    <tr>
-                        <th>Tipo de Coordenada</th>
-                        <th>Sintaxis Estándar</th>
-                        <th>Descripción e Interpretación Técnica</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Absoluta Cartesiana</strong></td>
-                        <td><code>X,Y</code></td>
-                        <td>Define una posición exacta referenciada directamente desde el origen matemático fijo (0,0).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Relativa Cartesiana</strong></td>
-                        <td><code>@X,Y</code></td>
-                        <td>Establece un desplazamiento vectorial tomando como origen transitorio el último punto registrado.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Absoluta Polar</strong></td>
-                        <td><code>Distancia&lt;Ángulo</code></td>
-                        <td>Traza un vector determinado por una longitud escalar y una inclinación angular angular respecto al (0,0).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Relativa Polar</strong></td>
-                        <td><code>@Distancia&lt;Ángulo</code></td>
-                        <td>Traza un vector desde el último punto con un radio de distancia y una dirección angular específica.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p><em>Regla angular:</em> Los ángulos se computan en dirección antihoraria, fijando los 0° estrictamente en el sentido Este (derecha horizontal).</p>
-
-            <br>
-            <h3>1.3 Ayudas de Precisión y Rastreo Dinámico (Dynamic Input)</h3>
-            <p>El delineado moderno balancea las coordenadas con sistemas auxiliares cinemáticos automáticos que agilizan el modelado sin pérdida de precisión geométrica:</p>
-            <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
-                <li><strong>Modo Ortogonal (ORTHO / F8):</strong> Restringe el movimiento del cursor exclusivamente en ejes perpendiculares coordinados (0°, 90°, 180° y 270°).</li>
-                <li><strong>Rastreo Polar (POLAR / F10):</strong> Proyecta líneas de referencia vectoriales intermitentes a intervalos angulares específicos previamente configurados (ej. cada 15° o 45°).</li>
-                <li><strong>Referencia a Objetos (OSNAP / F3):</strong> Captura puntos geométricos críticos exactos sobre entidades existentes de manera digital (Puntos finales, puntos medios, centros, intersecciones y tangencias).</li>
-            </ul>
-
-            <br>
-            <h3>1.4 Material de Estudio Dirigido</h3>
-            <p>Consulte la documentación de referencia científica correspondiente a la presente sesión didáctica teórica:</p>
-            <div class="caja-descarga">
-                <div>
-                    <strong>📄 Compendio Teórico - Entornos e Introducción a Vectores CAD</strong>
-                    <p style="font-size: 0.85rem; color: var(--color-texto-suave); margin: 0;">Formato: PDF | Repositorio Oficial Documentos</p>
-                </div>
-                <a href="documentos/teoria-modulo1.pdf" target="_blank" class="btn-descarga">📥 Descargar PDF</a>
-            </div>
-        </section>
-
-        <section class="bloque-simulador">
-            <h2>🧩 Laboratorio de Simulación Cinemática de Coordenadas</h2>
-            <p>Haga clic en cualquier intersección de la rejilla técnica interactiva para registrar un punto de inicio (P1) y desplace el cursor para simular el comportamiento matemático del entorno CAD en tiempo real.</p>
-            <div class="canvas-container">
-                <canvas id="planoCartesiano" width="400" height="400"></canvas>
-                <div class="valores-simulador">
-                    <h4>Vector Analizado (P1 → Cursor):</h4>
-                    <br>
-                    <div class="val-linea">Punto Fijo P1: <span id="v-p1">(0, 0)</span></div>
-                    <div class="val-linea">Cursor Actual: <span id="v-cursor">(0, 0)</span></div>
-                    <hr style="margin: 0.8rem 0; border: 0; border-top: 1px solid #cbd5e1;">
-                    <div class="val-linea">Absoluta Cartesiana: <span id="v-abs">0, 0</span></div>
-                    <div class="val-linea">Relativa Cartesiana: <span id="v-rel">@0, 0</span></div>
-                    <div class="val-linea">Relativa Polar: <span id="v-polar">@0&lt;0°</span></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bloque-evaluacion">
-            <h2>📝 Evaluación Teórica: Validación de Conceptos Técnicos</h2>
-            <p>Responda el cuestionario normativo. El sistema evaluará su competencia teórica y generará retroalimentación inmediata.</p>
-            <br>
-            <form id="quiz-avanzado">
-                <div class="pregunta" data-correcta="b">
-                    <p>1. ¿Qué coordenada representa un punto ubicado a 40 unidades hacia la izquierda del último punto trazado, manteniendo la horizontalidad?</p>
-                    <label class="opcion"><input type="radio" name="q1" value="a"> @40,0</label>
-                    <label class="opcion"><input type="radio" name="q1" value="b"> @-40,0</label>
-                    <label class="opcion"><input type="radio" name="q1" value="c"> @40&lt;0</label>
-                    <div class="feedback"></div>
-                </div>
-
-                <div class="pregunta" data-correcta="c">
-                    <p>2. Si desea trazar una línea inclinada directamente hacia abajo empleando el sistema Relativo Polar, ¿cuál de las siguientes sintaxis es correcta?</p>
-                    <label class="opcion"><input type="radio" name="q2" value="a"> 50&lt;90</label>
-                    <label class="opcion"><input type="radio" name="q2" value="b"> @50&lt;180</label>
-                    <label class="opcion"><input type="radio" name="q2" value="c"> @50&lt;270</label>
-                    <div class="feedback"></div>
-                </div>
-
-                <div class="pregunta" data-correcta="a">
-                    <p>3. ¿Qué comando por teclado o atajo abreviado estándar inicializa la entidad de trazo continuo rectilíneo?</p>
-                    <label class="opcion"><input type="radio" name="q3" value="a"> L</label>
-                    <label class="opcion"><input type="radio" name="q3" value="b"> LINEA</label>
-                    <label class="opcion"><input type="radio" name="q3" value="c"> RECTA</label>
-                    <div class="feedback"></div>
-                </div>
-
-                <div class="pregunta" data-correcta="c">
-                    <p>4. ¿Qué función cumple la tecla de acceso rápido F3 en el modelado técnico digital?</p>
-                    <label class="opcion"><input type="radio" name="q4" value="a"> Restringir el movimiento de forma estrictamente ortogonal.</label>
-                    <label class="opcion"><input type="radio" name="q4" value="b"> Activar el guardado automático de la plantilla de dibujo.</label>
-                    <label class="opcion"><input type="radio" name="q4" value="c"> Conmutar el encendido y apagado de las capturas de objetos exactos (OSNAP).</label>
-                    <div class="feedback"></div>
-                </div>
-
-                <div class="pregunta" data-correcta="b">
-                    <p>5. ¿Cuál es el comportamiento de las coordenadas ingresadas sin anteponer el carácter '@'?</p>
-                    <label class="opcion"><input type="radio" name="q5" value="a"> Se procesan con respecto al último punto geométrico ingresado.</label>
-                    <label class="opcion"><input type="radio" name="q5" value="b"> Se computan como absolutas tomando como pivote estricto el origen invariable (0,0).</label>
-                    <label class="opcion"><input type="radio" name="q5" value="c"> Provocan un error sintáctico de entrada en la consola de comandos.</label>
-                    <div class="feedback"></div>
-                </div>
-
-                <button type="button" class="btn-evaluar" onclick="evaluarQuizAvanzado()">Validar Aptitud Teórica</button>
-            </form>
-            <div id="res-quiz-avanzado" style="margin-top: 1rem; font-weight: bold; font-size: 1.1rem;"></div>
-        </section>
-
-        <section class="bloque-laboratorio">
-            <h2>💻 2. Componente Práctico (Duración: 2 Horas)</h2>
-            <br>
-            <h3>2.1 Práctica Guiada: Modelado de Perfil Geométrico Cerrado</h3>
-            <p>Construya en su estación CAD un cuadrado estricto calibrado en dimensiones de 50x50 unidades empleando sintaxis estructurada por bloques en línea de comandos:</p>
-            
-            <div class="codigo-cad">
-                Comando: L [Presione Enter]<br>
-                Precise primer punto: 10,10 [Origen Absoluto]<br>
-                Precise siguiente punto: @50,0 [Desplazamiento horizontal positivo]<br>
-                Precise siguiente punto: @0,50 [Desplazamiento vertical positivo]<br>
-                Precise siguiente punto: @-50,0 [Desplazamiento horizontal negativo]<br>
-                Precise siguiente punto: C [Cierre de polígono normalizado]
-            </div>
-
-            <br>
-            <h3>2.2 Guía de Taller Práctico Desarrollada</h3>
-            <p>Descargue el plano de taller normado complementario para ejecutar la secuencia de asignación práctica de laboratorio:</p>
-            <div class="caja-descarga" style="border-color: #10b981;">
-                <div>
-                    <strong>📄 Guía de Práctica Instruccional N° 1 - Trazados Lineales Basales</strong>
-                    <p style="font-size: 0.85rem; color: var(--color-texto-suave); margin: 0;">Formato: PDF | Incluye esquemas angulares y coordenadas complejas</p>
-                </div>
-                <a href="documentos/guia-laboratorio1.pdf" target="_blank" class="btn-descarga" style="background-color: #10b981;">📥 Descargar PDF</a>
-            </div>
-        </section>
-
-        <section class="bloque-evaluacion">
-            <h2>🏆 Rúbrica Analítica de Laboratorio (Escala Vigesimal: 0 - 20)</h2>
-            <p>Considere los siguientes indicadores cuantitativos estándar para medir la calidad técnica de su archivo <code>.DWG</code> antes de remitir su propuesta de aporte:</p>
-            
-            <table class="tabla-tecnica">
-                <thead>
-                    <tr>
-                        <th>Criterio Evaluado</th>
-                        <th>Excelente (4 pts)</th>
-                        <th>Bueno (3 pts)</th>
-                        <th>Suficiente (2 pts)</th>
-                        <th>Insuficiente (0 pts)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Precisión Dimensional</strong></td>
-                        <td>Cierre exacto en coordenadas de origen. Desviación 0.000 unidades.</td>
-                        <td>Cierre correcto pero con desfase menor por uso indebido de clicks.</td>
-                        <td>La figura tiene las medidas correctas pero flota desanclada en el espacio.</td>
-                        <td>Dimensiones alteradas o figuras abiertas de forma errónea.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sintaxis y Comandos</strong></td>
-                        <td>Uso óptimo verificado de coordenadas polares y relativas puras por consola.</td>
-                        <td>Empleo parcial de coordenadas, auxiliado excesivamente por rastreo visual.</td>
-                        <td>Trazado lento sin uso de alias ni atajos rápidos por teclado.</td>
-                        <td>Delineado empírico manual al ojo sin exactitud matemática alguna.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ayudas de Precisión</strong></td>
-                        <td>Uso impecable de capturas OSNAP en vértices e intersecciones.</td>
-                        <td>Fallas puntuales de captura por no limpiar puntos basura.</td>
-                        <td>Configuración imprecisa de intervalos de rastreo angular.</td>
-                        <td>Omisión total de ayudas automáticas, forzando cierres erráticos.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Estructura del Archivo</strong></td>
-                        <td>Nomenclatura limpia del archivo y guardado bajo el formato nativo estipulado.</td>
-                        <td>Nomenclatura incompleta pero archivo íntegro y accesible.</td>
-                        <td>El archivo abre con advertencias sintácticas por fallas en software externo.</td>
-                        <td>Archivo corrupto, ilegible o extensión incompatible de sistema.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="seccion-filosofia">
-            <h2>🔍 Espacio de Investigación y Aporte Comunitario</h2>
-            <p>¿Desarrolló una versión optimizada de las guías o desea indexar sus archivos resueltos de precisión para consulta estudiantil?</p>
-            <br>
-            <p><strong>Directrices obligatorias de calidad para la carga de material:</strong></p>
-            <ul class="lista-directrices">
-                <li>El archivo de dibujo debe guardarse con extensión limpia <code>.DWG</code> nativa.</li>
-                <li>Debe adjuntar obligatoriamente una imagen descriptiva del plano en formato <code>.PNG</code> o <code>.JPG</code> de alta resolución.</li>
-                <li>Estructurar el nombre del documento bajo la convención: <code>MOD1_APORTE_APELLIDO.zip</code>.</li>
-            </ul>
-            <br>
-            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-                <a href="https://github.com/JoseAc-AQP/Dibujo-Tecnico-Computarizado-2026/issues/new?title=[Aporte+Módulo+1]+Propuesta+de+Material" target="_blank" 
-                   style="display: inline-block; background-color: var(--color-secundario); color: white; padding: 0.7rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">
-                    📤 Registrar Aporte (Crear Issue en GitHub)
-                </a>
-                <a href="https://github.com/JoseAc-AQP/Dibujo-Tecnico-Computarizado-2026/pulls" target="_blank" 
-                   style="display: inline-block; background-color: var(--color-primario); color: white; padding: 0.7rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem; border: 1px solid #475569;">
-                    💻 Enviar Pull Request Institucional
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 - Repositorio Educativo de Dibujo Técnico Computarizado | JoseAc-AQP</p>
-    </footer>
-
+    <title>Módulo 1: Interfaz de Usuario y Sistemas de Coordenadas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // LÓGICA DEL SIMULADOR CARTESIANO (CANVAS)
-        const canvas = document.getElementById('planoCartesiano');
-        const ctx = canvas.getContext('2d');
-        let p1 = { x: 100, y: 300 }; // Punto inicial de referencia didáctica en lienzo
-
-        function dibujarPlano() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Rejilla técnica secundaria (Gris sutil)
-            ctx.strokeStyle = '#334155';
-            ctx.lineWidth = 0.5;
-            for(let i = 0; i < canvas.width; i += 20) {
-                ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke();
-                ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke();
-            }
-            
-            // Ejes Cartesiano de Referencia en Rojo y Verde CAD
-            ctx.lineWidth = 1.5;
-            ctx.strokeStyle = '#ef4444'; // Eje X
-            ctx.beginPath(); ctx.moveTo(0, 300); ctx.lineTo(canvas.width, 300); ctx.stroke();
-            ctx.strokeStyle = '#10b981'; // Eje Y
-            ctx.beginPath(); ctx.moveTo(100, 0); ctx.lineTo(100, canvas.height); ctx.stroke();
-
-            // Dibujar punto fijo P1
-            ctx.fillStyle = '#f59e0b';
-            ctx.beginPath(); ctx.arc(p1.x, p1.y, 5, 0, 2 * Math.PI); ctx.fill();
-        }
-
-        canvas.addEventListener('mousemove', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            const mouseY = e.clientY - rect.top;
-
-            // Conversión de coordenadas píxel a unidades técnicas relativas al origen local (100, 300)
-            const cadX = Math.round((mouseX - 100));
-            const cadY = Math.round((300 - mouseY));
-
-            const p1CadX = Math.round((p1.x - 100));
-            const p1CadY = Math.round((300 - p1.y));
-
-            // Vectores diferenciales relativos (Delta)
-            const dx = cadX - p1CadX;
-            const dy = cadY - p1CadY;
-
-            // Cálculos Polares Relativos matemáticos
-            const distancia = Math.round(Math.sqrt(dx*dx + dy*dy));
-            let angulo = Math.round(Math.atan2(dy, dx) * (180 / Math.PI));
-            if (angulo < 0) angulo += 360;
-
-            // Renderizar dinámicamente en textos
-            document.getElementById('v-cursor').textContent = `(${cadX}, ${cadY})`;
-            document.getElementById('v-abs').textContent = `${cadX}, ${cadY}`;
-            document.getElementById('v-rel').textContent = `@${dx}, ${dy}`;
-            document.getElementById('v-polar').textContent = `@${distancia}<${angulo}°`;
-
-            // Redibujar el vector dinámico interactivo en pantalla
-            dibujarPlano();
-            ctx.strokeStyle = '#38bdf8';
-            ctx.lineWidth = 2;
-            ctx.setLineDash([4, 4]);
-            ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(mouseX, mouseY); ctx.stroke();
-            ctx.setLineDash([]);
-        });
-
-        canvas.addEventListener('click', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            p1.x = e.clientX - rect.left;
-            p1.y = e.clientY - rect.top;
-            const cadX = Math.round((p1.x - 100));
-            const cadY = Math.round((300 - p1.y));
-            document.getElementById('v-p1').textContent = `(${cadX}, ${cadY})`;
-        });
-
-        dibujarPlano();
-
-        // LÓGICA DE VERIFICACIÓN PEDAGÓGICA DEL CUESTIONARIO
-        function evaluarQuizAvanzado() {
-            const preguntas = document.querySelectorAll('.pregunta');
-            let notaTeorica = 0;
-
-            preguntas.forEach(p => {
-                const respuestaCorrecta = p.getAttribute('data-correcta');
-                const seleccionada = p.querySelector(`input[name="${p.querySelector('input').name}"]:checked`);
-                const feedbackDiv = p.querySelector('.feedback');
-                
-                feedbackDiv.style.display = 'block';
-
-                if (seleccionada) {
-                    if (seleccionada.value === respuestaCorrecta) {
-                        notaTeorica += 4; // Cada pregunta vale 4 puntos para alcanzar los 20 máximos
-                        feedbackDiv.style.color = '#10b981';
-                        feedbackDiv.textContent = '✔ ¡Correcto! Comprensión técnica adecuada.';
-                    } else {
-                        feedbackDiv.style.color = '#ef4444';
-                        feedbackDiv.textContent = `✘ Incorrecto. La respuesta adecuada era la opción (${respuestaCorrecta.toUpperCase()}).`;
+        // Configuración de la paleta de colores aprobada
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
                     }
-                } else {
-                    feedbackDiv.style.color = '#f59e0b';
-                    feedbackDiv.textContent = '⚠ Pregunta omitida sin calificar.';
                 }
-            });
-
-            const contenedorResultado = document.getElementById('res-quiz-avanzado');
-            if (notaTeorica >= 12) {
-                contenedorResultado.style.color = '#10b981';
-                contenedorResultado.textContent = `🎉 Nota Obtenida: ${notaTeorica}/20. Posee las bases conceptuales requeridas para el modelado en laboratorio.`;
-            } else {
-                contenedorResultado.style.color = '#f59e0b';
-                contenedorResultado.textContent = `📋 Nota Obtenida: ${notaTeorica}/20. Se sugiere revisar detenidamente la tabla sintáctica y reintentar el test.`;
             }
         }
     </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
+
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 1: Interfaz de Usuario y Sistemas de Coordenadas</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Entorno de trabajo CAD y fundamentos del posicionamiento dimensional geométrico.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Técnico
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Introducción al Entorno CAD</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Sistemas de Coordenadas</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. Introducción al Entorno CAD y Configuración Inicial</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    El dominio del Dibujo Técnico Computarizado comienza por comprender la interfaz del software de Diseño Asistido por Computadora (CAD). Siguiendo las metodologías de precisión técnica industrial (normas ISO y enfoques de escuelas especializadas como la <strong>GTZ</strong>), el manejo fluido del espacio de trabajo es un requisito crítico para garantizar la rapidez y exactitud en la delineación de planos de ingeniería.
+                </p>
+                
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Elementos clave de la Interfaz Gráfica:</h3>
+                <ul class="list-disc pl-5 space-y-1 text-sm text-gray-600">
+                    <li><strong>Área de Dibujo:</strong> El espacio infinito bidimensional (o tridimensional) donde se generan los vectores geométricos.</li>
+                    <li><strong>Línea de Comandos:</strong> El núcleo operativo de control donde se introducen los comandos directos y las variables del sistema.</li>
+                    <li><strong>Barra de Estado:</strong> Herramientas auxiliares de precisión como el forzado de coordenadas (SNAP), rejilla (GRID) y rastreo ortogonal (ORTHO).</li>
+                    <li><strong>Cinta de Opciones (Ribbon):</strong> Organización modular de comandos de dibujo, modificación, capas y anotaciones.</li>
+                </ul>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    Para trazar entidades geométricas exactas, el entorno CAD se fundamenta en el sistema de coordenadas cartesianas matemáticas. Es imperativo diferenciar los tres métodos de entrada numérico-vectorial:
+                </p>
+
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">A. Coordenadas Cartesianas Absolutas</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Toman como referencia única el origen absoluto del plano bidimensional <code>(0,0)</code> (intersección fija de los ejes X e Y). 
+                            <strong>Formato de entrada:</strong> <code>X,Y</code> (Ejemplo: <code>50,30</code> ubica el punto exactamente a 50 unidades en horizontal y 30 en vertical desde el origen absoluto).
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">B. Coordenadas Cartesianas Relativas</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Toman como punto de origen de referencia el <strong>último punto marcado</strong> en la pantalla, en lugar del origen estático <code>(0,0)</code>.
+                            <strong>Formato de entrada:</strong> Se antepone el símbolo de arroba: <code>@X,Y</code> (Ejemplo: <code>@20,0</code> dibuja una línea horizontal de 20 unidades hacia la derecha desde el último punto establecido).
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">C. Coordenadas Polares Relativas</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Definen la posición de un nuevo punto mediante una <strong>distancia lineal</strong> y un <strong>ángulo de inclinación</strong> con respecto al último punto marcado. Los ángulos se miden en sentido antihorario partiendo desde el eje X positivo (0° a la derecha).
+                            <strong>Formato de entrada:</strong> <code>@distancia&lt;ángulo</code> (Ejemplo: <code>@50&lt;45</code> dibuja una entidad con longitud de 50 unidades inclinada a 45 grados).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Modos de Precisión y su Aplicación en Diseño</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Comando / Modo</th>
+                                    <th class="p-3 font-semibold">Función en el Flujo de Trabajo</th>
+                                    <th class="p-3 font-semibold">Ventaja Operativa</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-medium text-gray-900">Modo Ortogonal (ORTHO - F8)</td>
+                                    <td class="p-3 text-gray-600">Restringe el movimiento del cursor exclusivamente a los ejes rectos (0°, 90°, 180°, 270°).</td>
+                                    <td class="p-3 text-gray-600">Velocidad extrema en piezas prismáticas planas.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-medium text-gray-900">Referencia a Objetos (OSNAP - F3)</td>
+                                    <td class="p-3 text-gray-600">Fuerza la captura exacta de puntos críticos geométricos (Puntos medios, extremos, centros, intersecciones).</td>
+                                    <td class="p-3 text-gray-600">Elimina errores acumulativos de aproximación visual.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-medium text-gray-900">Entrada Dinámica (DYN - F12)</td>
+                                    <td class="p-3 text-gray-600">Muestra los campos de datos e instrucciones directamente flotando junto al cursor en pantalla.</td>
+                                    <td class="p-3 text-gray-600">Evita desviar continuamente la vista hacia la barra inferior.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Práctica Guiada en Computadora)</h2>
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Desafío Técnico Práctico:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante configurará sus unidades de trabajo a milímetros e ingresará una secuencia de comandos numéricos controlados mediante la línea de comando para trazar el contorno cerrado perimetral exacto de un **"Perfil Guía de Deslizamiento"**.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Instrucciones de Programación y Trazado:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Configuración Inicial:</strong> Inicie un dibujo en blanco basado en la plantilla estándar <code>acadiso.dwt</code>. Escriba el comando <code>UNIDADES</code> (UNITS) y valide la precisión lineal en 0.00 mm.</li>
+                    <li><strong>Punto de Partida Absoluto:</strong> Active el comando <code>LINEA</code> (LINE o L). En la solicitud del primer punto, digite el origen absoluto de taller: <code>100,100</code> y presione Enter.</li>
+                    <li><strong>Trazado Perimetral Relativo:</strong> Introduzca secuencialmente las siguientes coordenadas para construir el contorno rígido de la pieza:
+                        <ul class="list-none pl-4 py-2 font-mono text-xs bg-gray-900 text-green-400 rounded-md my-2 space-y-1">
+                            <li>@80,0 &lt;-- Desplazamiento horizontal base</li>
+                            <li>@0,30 &lt;-- Escalón vertical derecho</li>
+                            <li>@40&lt;135 &lt;-- Tramo inclinado con coordenadas polares</li>
+                            <li>@0,20 &lt;-- Altura lateral superior</li>
+                            <li>@-50,0 &lt;-- Retorno horizontal superior</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cierre de Geometría:</strong> Escriba la letra <code>C</code> (CLOSE / Cerrar) en la línea de comandos para que el software autocomplete el tramo final de forma exacta regresando al origen original <code>(100,100)</code>. Guarde el archivo final como <code>Módulo1_Apellido_Nombre.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Teórica</h2>
+                <p class="text-sm text-gray-600 mb-4">Comprueba tu asimilación conceptual antes de remitir tus archivos al servidor escolar:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. ¿Qué carácter o símbolo le indica al software CAD que debe procesar una coordenada como "Relativa" al último punto marcado?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p1" class="mr-2">a) El símbolo de menor que (&lt;).</label>
+                            <label class="block"><input type="radio" name="p1" class="mr-2">b) El símbolo de arroba (@).</label>
+                            <label class="block"><input type="radio" name="p1" class="mr-2">c) El signo de porcentaje (%).</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. Si ingresa la instrucción @40&lt;180 en el comando de línea, ¿hacia qué dirección Cardinal se trazará el vector?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p2" class="mr-2">a) Hacia la derecha (Este).</label>
+                            <label class="block"><input type="radio" name="p2" class="mr-2">b) Hacia arriba (Norte).</label>
+                            <label class="block"><input type="radio" name="p2" class="mr-2">c) Hacia la izquierda (Oeste).</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 1:\n1: b) El símbolo de arroba (@).\n2: c) Hacia la izquierda (Oeste) dado el giro de 180°.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
 </body>
 </html>
