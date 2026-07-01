@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4: Vistas Ortogonales y Proyecciones Técnicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 4: Vistas Ortogonales y Proyecciones Técnicas</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Abstracción espacial, sistemas de proyección diédrica y abatimiento de planos técnicos.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Técnico
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Fundamentos de Proyección</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Sistema Europeo vs. Americano</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. Fundamentos de la Proyección Ortogonal</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    La proyección ortogonal es el pilar fundamental del dibujo técnico industrial. Permite representar un objeto tridimensional complejo en un plano bidimensional (papel o pantalla CAD) sin distorsiones métricas. Basado en la norma **ISO 5456-2**, este método utiliza rayos de proyección perpendiculares al plano de dibujo, lo que significa que las líneas visuales son paralelas entre sí y se extienden hasta el infinito.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    A través de este proceso de abstracción, un objeto se descompone en sus vistas principales: **Alzado** (vista frontal), **Planta** (vista superior) y **Perfil** (vista lateral). La correspondencia geométrica e interrelación entre estas vistas es estricta; un error de alineación invalida por completo la lectura del plano en los talleres de manufactura.
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    En el ámbito industrial global coexisten dos métodos de disposición para las proyecciones ortogonales de un sólido, dependiendo de la ubicación del objeto respecto a los planos del triedro fundamental:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="border border-gray-200 rounded-lg p-5 bg-gray-50">
+                        <span class="text-xs font-bold uppercase text-techCyan bg-techBlue/10 px-2 py-1 rounded">ISO Método E</span>
+                        <h3 class="font-bold text-techBlue text-lg mt-2">Sistema Europeo (Primer Diedro)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed">
+                            El objeto se sitúa **entre el observador y el plano de proyección**. Al proyectar las caras, la vista de la izquierda se dibuja a la derecha del alzado, y la vista inferior se coloca arriba. Es el estándar dominante en Europa y América Latina, promovido históricamente por escuelas técnicas de tradición alemana como la **GTZ**.
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-5 bg-gray-50">
+                        <span class="text-xs font-bold uppercase text-techBlue bg-techCyan/20 px-2 py-1 rounded">ISO Método A</span>
+                        <h3 class="font-bold text-techCyan text-lg mt-2">Sistema Americano (Tercer Diedro)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed">
+                            El **plano de proyección se posiciona entre el observador y el objeto**. Las vistas se sitúan en la misma dirección desde la que se miran: la vista derecha permanece a la derecha y la planta se ubica directamente sobre el alzado. Es el estándar normado por **ANSI/ASME** utilizado en Estados Unidos y Japón.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Disposición Técnica de las Vistas Principales</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Sistema de Proyección</th>
+                                    <th class="p-3 font-semibold">Ubicación de la Planta</th>
+                                    <th class="p-3 font-semibold">Ubicación del Perfil Izquierdo</th>
+                                    <th class="p-3 font-semibold">Símbolo Normalizado en Cajetín</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Europeo (ISO E)</td>
+                                    <td class="p-3">**Debajo** del Alzado</td>
+                                    <td class="p-3">A la **Derecha** del Alzado</td>
+                                    <td class="p-3 font-mono text-xs">Tronco de cono con círculo a la derecha</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-semibold text-gray-900">Americano (ISO A)</td>
+                                    <td class="p-3">**Encima** del Alzado</td>
+                                    <td class="p-3">A la **Izquierda** del Alzado</td>
+                                    <td class="p-3 font-mono text-xs">Tronco de cono con círculo a la izquierda</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Desarrollo Asistido)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Problema de Ingeniería Práctica:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        Utilizando un archivo CAD que contiene un sólido isométrico de un **"Soporte de Eje Pivotante con Planos Oblicuos y Ranuras Pasantes"**, el estudiante aplicará el método diédrico para obtener y alinear geométricamente sus tres vistas fundamentales bajo el sistema Europeo.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Flujo de Trabajo Técnico en Pantalla:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Estrategia de Capas y Auxiliares:</strong> Asegúrese de tener activas las capas del módulo anterior (`01_CONTORNOS`, `02_EJES`, `04_OCULTAS`). Cree una capa temporal llamada `AUX_PROYECCIONES` con un color contrastante (ej. cian o magenta) para las líneas de transferencia de medidas.</li>
+                    <li><strong>Delineación del Alzado:</strong> Dibuje el alzado en la zona superior izquierda del área de trabajo. Esta vista define las longitudes principales y las alturas del soporte.</li>
+                    <li><strong>Proyección de la Planta:</strong> Active el **Rastreo de Referencia a Objetos (Autotrack)** y trace líneas auxiliares verticales hacia abajo desde cada vértice del alzado. Dibuje la planta respetando la alineación exacta; el ancho del alzado debe coincidir con el ancho de la planta.</li>
+                    <li><strong>Transferencia al Perfil mediante Línea de Mitra (45°):</strong> Desde la esquina inferior derecha del espacio del alzado, trace una línea auxiliar a **45 grados**. Proyecte las profundidades de la planta en horizontal hasta intersectar la línea de 45° y, desde esos puntos, suba verticalmente. Esto asegura que la profundidad de la planta se convierta con precisión en la profundidad del perfil derecho sin necesidad de volver a medir.</li>
+                    <li><strong>Tratamiento de Aristas Ocultas:</strong> Identifique las ranuras internas pasantes que no son visibles desde el lateral ni desde el frente, y asígneles el tipo de línea discontinua en la capa `04_OCULTAS`. Guarde el plano finalizado como: <code>Modulo4_Vistas_Alineadas.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Formativa</h2>
+                <p class="text-sm text-gray-600 mb-4">Comprueba tu capacidad de interpretación y correspondencia espacial:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. En el Sistema Europeo de proyección (Primer Diedro), ¿dónde se sitúa de forma normalizada la vista de Planta?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p5" class="mr-2">a) Directamente encima del Alzado.</label>
+                            <label class="block"><input type="radio" name="p5" class="mr-2">b) Directamente debajo del Alzado.</label>
+                            <label class="block"><input type="radio" name="p5" class="mr-2">c) A la izquierda del Perfil Izquierdo.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. ¿Qué propiedad geométrica fundamental de un plano técnico se transfiere o vincula de forma exacta entre la vista de Planta y la vista de Perfil?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p6" class="mr-2">a) La altura total de la pieza.</label>
+                            <label class="block"><input type="radio" name="p6" class="mr-2">b) La profundidad o anchura lateral del objeto.</label>
+                            <label class="block"><input type="radio" name="p6" class="mr-2">c) Únicamente los ángulos de inclinación.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 4:\n1: b) Directamente debajo del Alzado.\n2: b) La profundidad o anchura lateral del objeto se transfiere con exactitud mediante la línea de mitra (45°).')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
