@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 15: Introducción al Diseño Asistido en 3D y Modelado de Sólidos Paramétricos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 15: Modelado de Sólidos Paramétricos en 3D</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Fundamentos de geometría volumétrica, operaciones booleanas, extrusión, revolución y la norma ISO 16792 de anotación en 3D.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Avanzado / Tecnológico
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Entorno Tridimensional</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Operaciones de Modelado</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. El Salto del Dibujo 2D al Modelo Volumétrico Paramétrico</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Tradicionalmente, la ingeniería ha comunicado las ideas tridimensionales proyectándolas en planos bidimensionales (vistas de alzado, planta y perfil). Sin embargo, el diseño moderno se basa en el **Modelado de Sólidos 3D**, donde el objeto se construye digitalmente con propiedades físicas reales (volumen, masa, centro de gravedad y momentos de inercia).
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Siguiendo los estándares formativos de la **UNED** y las guías avanzadas de diseño de la **GTZ**, el modelado paramétrico permite que las dimensiones del objeto estén interconectadas a través de variables o parámetros. Si se altera el radio de un eje en una etapa del diseño, los rodamientos y alojamientos asociados se recalculan y actualizan automáticamente en cascada, optimizando los tiempos de ciclo en la manufactura integrada por computadora (CAM).
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Flujo de Trabajo y Operaciones de Construcción (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    La creación de un sólido tridimensional complejo parte de un perfil bidimensional plano o boceto (Sketch), al cual se le aplican transformaciones en el espacio geométrico:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm text-gray-600">
+                    <div class="border border-gray-200 rounded-lg p-5 bg-gray-50">
+                        <span class="text-xs font-bold uppercase text-techCyan bg-techBlue/10 px-2 py-1 rounded">Operaciones de Generación</span>
+                        <h3 class="font-bold text-techBlue text-lg mt-2">Extrusión y Revolución</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed">
+                            La **Extrusión** añade profundidad ortogonal a un boceto cerrado a lo largo de una trayectoria rectilínea. La **Revolución** hace girar un perfil plano alrededor de un eje central, siendo la operación idónea para generar piezas simétricas torneadas como árboles de transmisión, bridas, poleas y conos de acoplamiento.
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-5 bg-gray-50">
+                        <span class="text-xs font-bold uppercase text-techBlue bg-techCyan/20 px-2 py-1 rounded">Lógica Booleana</span>
+                        <h3 class="font-bold text-techCyan text-lg mt-2">Unión, Diferencia e Intersección</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed">
+                            Permiten combinar volúmenes independientes de forma matemática. La **Union** fusiona dos sólidos en un único cuerpo. La **Diferencia (o Sustracción)** utiliza un sólido secundario como una herramienta de corte para remover material de una pieza principal (indispensable para modelar agujeros, chaveteros o vaciados).
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Conceptos Críticos del Espacio de Trabajo 3D</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm border border-gray-200">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Término de Ingeniería</th>
+                                    <th class="p-3 font-semibold">Significado y Contexto Técnico</th>
+                                    <th class="p-3 font-semibold">Normativa Relacionada</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600 font-medium">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-bold text-gray-900">Plano de Trabajo (Workplane)</td>
+                                    <td class="p-3">Superficie geométrica bidimensional infinita (XY, YZ, XZ) utilizada para trazar el boceto base antes de aplicar volumen.</td>
+                                    <td class="p-3 text-gray-500 font-mono text-xs">ISO 5456</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-bold text-gray-900">Árbol de Operaciones (Feature Tree)</td>
+                                    <td class="p-3">Historial cronológico e interactivo de comandos aplicados. Permite editar dimensiones pasadas y reestructurar la geometría de la pieza.</td>
+                                    <td class="p-3 text-blue-600 font-semibold">Metodología Paramétrica</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-bold text-gray-900">Anotación Digital (PMI)</td>
+                                    <td class="p-3">Inclusión de cotas, tolerancias geométricas (GD&T) y notas de acabado superficial directamente sobre el modelo sólido tridimensional sin necesidad de imprimir papel.</td>
+                                    <td class="p-3 text-techBlue font-bold font-mono text-xs">ISO 16792</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Modelado de una Brida de Retención en 3D)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Desafío Práctico de Diseño 3D:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El alumno modelará volumétricamente una **"Brida Circular de Acoplamiento Hidráulico"**. Para ello, empleará herramientas de extrusión concéntrica, cortes booleanos cilíndricos y una matriz polar 3D para distribuir de forma automatizada los agujeros de los pernos de fijación.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Configuración del Plano y Boceto Base:</strong> Cambie el entorno de trabajo de CAD a "Modelado 3D". Seleccione el plano cartesiano de planta **XY** como plano de trabajo. Dibuje una circunferencia centrada en el origen $(0,0,0)$ con un diámetro de `120 mm` y otra concéntrica de `50 mm`.</li>
+                    <li><strong>Aplicación de Volumen (Comando EXTRUSION / EXTRUDE):</strong> Invoque la herramienta de extrusión. Seleccione la región comprendida entre los dos círculos y asigne una altura de extrusión de **`20 mm`**. El software generará un anillo sólido grueso con un orificio pasante central.</li>
+                    <li><strong>Modelado de la Herramienta de Corte de Pernos:</strong> Seleccione la cara plana superior del anillo como nuevo plano de boceto. Dibuje una pequeña circunferencia de diámetro `12 mm` posicionada exactamente en la coordenada $(0, 45, 20)$. Aplique el comando **`PRESTIRAR` (`PRESSPULL`)** o Extrusión con opción de sustracción (Corte) hacia abajo con una longitud de `25 mm` para perforar la brida.</li>
+                    <li><strong>Matriz Polar 3D y Guardado Técnico:</strong> Use el comando de matriz polar (**`ARRAYPOLAR`**). Seleccione el agujero recién creado como objeto, defina el eje central Z como centro de rotación e introduzca un conteo de **`4 elementos`** espaciados de forma equidistante a `90°`. Guarde el modelo tridimensional sólido resultante con el nombre reglamentario: <code>Modulo15_Brida_Solid3D.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación de Modelado y Parametrización</h2>
+                <p class="text-sm text-gray-600 mb-4">Mide tu nivel de asimilación de conceptos tridimensionales de ingeniería:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. ¿Qué beneficio técnico central ofrece la metodología de modelado paramétrico en los softwares de diseño industrial modernos frente al dibujo estático?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p27" class="mr-2">a) Permite pintar el modelo sólido con texturas de colores más realistas.</label>
+                            <label class="block"><input type="radio" name="p27" class="mr-2">b) Establece relaciones geométricas y dimensionales mediante variables, haciendo que cualquier cambio de medida en una operación se actualice de forma automática en todo el diseño y sus planos asociados.</label>
+                            <label class="block"><input type="radio" name="p27" class="mr-2">c) Evita tener que usar el teclado para introducir las coordenadas geométricas.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. De acuerdo con la norma internacional ISO 16792, cuando se trabaja con Modelos de Información de Producto (PMI), ¿en qué consiste la documentación técnica moderna?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p28" class="mr-2">a) En prohibir por completo el uso de acotación en los planos técnicos para ahorrar espacio de almacenamiento de memoria.</label>
+                            <label class="block"><input type="radio" name="p28" class="mr-2">b) En imprimir obligatoriamente los planos en formato papel vegetal utilizando plotters tradicionales de plumilla.</label>
+                            <label class="block"><input type="radio" name="p28" class="mr-2">c) En integrar las cotas, tolerancias geométricas y notas de taller directamente en el entorno interactivo del modelo tridimensional 3D, reduciendo o eliminando la dependencia de las láminas impresas en 2D.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 15:\n1: b) La actualización asociativa automática en cascada es la propiedad fundamental del diseño paramétrico.\n2: c) La norma ISO 16792 regula la transición digital hacia modelos 3D inteligentes autoanotados sin soporte de papel tradicional.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
