@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 7: Acabado de Superficies y Signos de Mecanizado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 7: Acabado de Superficies y Calidad superficial</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Especificación microgeométrica, estados de rugosidad ISO 1302 e indicaciones de manufactura en taller.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Técnico
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Calidad Superficial</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Símbolos de Rugosidad</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. El Concepto de Acabado Superficial e Industrial</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Más allá de las tolerancias dimensionales estudiadas en el módulo previo, las piezas mecánicas manufacturadas presentan irregularidades microscópicas en sus caras exteriores producto de la acción de las herramientas de corte (cuchillas de torno, fresas, muelas de rectificado). La medición de estas crestas y valles microscópicos se denomina **Rugosidad**.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    De acuerdo con las directrices de la **Norma ISO 1302** y el manual técnico básico **GTZ Metal 1 (Sección T16)**, el control estricto del acabado es vital para superficies en contacto dinámico, como los cilindros de un motor o los asientos de rodamientos. Un exceso de rugosidad provocaría fricción destructiva, mientras que un acabado pulido innecesario elevaría exponencialmente los costos de producción sin justificación técnica.
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    La especificación en los planos de ingeniería se realiza mediante el **Símbolo Básico de Rugosidad**, el cual consiste en un signo gráfico en forma de "V" con ramas desiguales inclinadas a 60° respecto a la superficie de la pieza.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-sm text-gray-600">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <span class="font-bold text-techBlue block">Símbolo Básico Abierto</span>
+                        <p class="text-xs mt-1">Representa una superficie cuya especificación de rugosidad puede lograrse mediante cualquier método de fabricación, con o sin remoción de material.</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <span class="font-bold text-techBlue block">Símbolo Cerrado (Triángulo)</span>
+                        <p class="text-xs mt-1">Exige de forma obligatoria que el acabado superficial se obtenga mediante **remoción de material** por maquinado (torneado, fresado, taladrado, rectificado).</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <span class="font-bold text-techBlue block">Símbolo con Círculo Inscrito</span>
+                        <p class="text-xs mt-1">Prohíbe estrictamente la eliminación de material. La superficie debe conservarse tal como viene del proceso primario (forja, fundición, laminado en caliente).</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Valores Técnicos de Rugosidad Media (Ra) y Clases Normalizadas</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Clase de Rugosidad</th>
+                                    <th class="p-3 font-semibold">Valor Ra (µm - micrómetros)</th>
+                                    <th class="p-3 font-semibold">Operación de Taller Típica</th>
+                                    <th class="p-3 font-semibold">Aplicación en Ingeniería</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-mono font-bold text-gray-900">N1 a N4</td>
+                                    <td class="p-3 text-blue-600 font-semibold">0.025 a 0.2 µm</td>
+                                    <td class="p-3">Superacabado, lapeado, rectificado fino.</td>
+                                    <td class="p-3">Bloques patrón de laboratorio, cojinetes hidrodinámicos de alta velocidad.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-mono font-bold text-gray-900">N5 a N6</td>
+                                    <td class="p-3 text-green-600 font-semibold">0.4 a 0.8 µm</td>
+                                    <td class="p-3">Rectificado cilíndrico, torneado de acabado fino.</td>
+                                    <td class="p-3">Asientos de rodamientos, caras de fricción de engranajes de precisión.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-mono font-bold text-gray-900">N7 a N9</td>
+                                    <td class="p-3 text-yellow-600 font-semibold">1.6 a 6.3 µm</td>
+                                    <td class="p-3">Torneado común, fresado general, cepillado.</td>
+                                    <td class="p-3">Superficies de acoplamiento estático, caras laterales de poleas, pernos comunes.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-mono font-bold text-gray-900">N10 a N12</td>
+                                    <td class="p-3 text-gray-500">12.5 a 50 µm</td>
+                                    <td class="p-3">Oxicorte, forjado, fundición en arena, aserrado bruto.</td>
+                                    <td class="p-3">Caras no funcionales de carcasas, estructuras pesadas de construcción.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-blue-50 border-l-4 border-techBlue p-4 rounded-r-lg">
+                    <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+                        <strong>Estructura Extendida del Símbolo:</strong> Sobre los brazos de la "V" normalizada se añade información técnica complementaria: En la posición **a** se ubica el valor máximo de rugosidad (ej. *Ra 0.8*); en la posición **b**, el método de fabricación (ej. *Fresado*); y en la posición **c**, la longitud de muestreo o evaluación.
+                    </p>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Desarrollo Guiado en CAD)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Problema Técnico de Delineación:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El alumno abrirá el plano finalizado del módulo anterior (el eje de transmisión escalonado). El desafío consiste en modelar o insertar el símbolo de rugosidad normalizado ISO 128/1302 como un **Bloque con Atributos**, para luego distribuirlo estratégicamente sobre las superficies funcionales del eje según los requerimientos de mecanizado.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Flujo Operativo en la Estación de Trabajo:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Construcción Geométrica del Símbolo:</strong> En una zona libre del dibujo, trace una línea a 60° con una longitud de `5 mm` y otra línea a 120° con una longitud de `10 mm`, formando la "V" asimétrica. Si se requiere mecanizado por remoción, cierre el triángulo con una línea horizontal superior a una altura de `4 mm`.</li>
+                    <li><strong>Definición de Atributos Dinámicos (comando DEFATR / ATTDEF):</strong> Invoque el comando de atributos. Defina un tag llamado `RUGOSIDAD`, configure la altura del texto en `2.5 mm` y posiciónelo justo arriba del brazo más largo de la "V". Esto permitirá editar el valor numérico (ej. *0.8* o *3.2*) de forma dinámica cada vez que se use el símbolo.</li>
+                    <li><strong>Creación del Bloque (comando BLOQUE / BLOCK):</strong> Seleccione la geometría del signo y el texto de atributo. Defina el nombre del bloque como `Simbolo_Rugosidad` y establezca el punto base de inserción justamente en el vértice inferior de la "V".</li>
+                    <li><strong>Colocación Normalizada:</strong> Inserte el bloque en la capa dedicada a anotaciones o cotas. Coloque el vértice del símbolo tocando las aristas externas del eje desde el exterior del material. Para las superficies cilíndricas del rodamiento, asigne un atributo de **0.8** (Clase N6), y para los escalones de desbaste común, configure el atributo en **3.2** (Clase N8). Guarde como: <code>Modulo7_Acabados_Superficiales.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Formativa</h2>
+                <p class="text-sm text-gray-600 mb-4">Comprueba tu nivel de dominio en especificaciones microgeométricas industriales:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. ¿Qué indica de forma estricta la presencia de una pequeña barra horizontal que cierra el vértice superior del símbolo básico de rugosidad en forma de "V"?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p11" class="mr-2">a) Que la rugosidad debe medirse exclusivamente en pulgadas.</label>
+                            <label class="block"><input type="radio" name="p11" class="mr-2">b) Que el acabado superficial debe obtenerse obligatoriamente mediante un proceso de arranque o remoción de material (mecanizado).</label>
+                            <label class="block"><input type="radio" name="p11" class="mr-2">c) Que está prohibido alterar la superficie mediante herramientas de corte.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. Si un plano técnico industrial especifica una calidad superficial de clase N6 para el asiento de un retén hidráulico, ¿a qué valor numérico equivalente de rugosidad media (Ra) corresponde?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p12" class="mr-2">a) 12.5 micrómetros (µm).</label>
+                            <label class="block"><input type="radio" name="p12" class="mr-2">b) 0.8 micrómetros (µm).</label>
+                            <label class="block"><input type="radio" name="p12" class="mr-2">c) 50 micrómetros (µm).</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 7:\n1: b) Exige obligatoriamente la remoción de material por maquinado.\n2: b) La clase N6 corresponde exactamente a un valor de Ra de 0.8 µm, estándar para superficies de contacto y sellado dinámico.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
