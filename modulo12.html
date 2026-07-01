@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 12: Dibujo de Elementos de Transmisión de Potencia y Órganos de Máquinas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 12: Elementos de Transmisión y Órganos de Máquinas</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Representación normalizada de engranajes, poleas, chavetas y rodamientos para el diseño cinemático industrial.</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Avanzado
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Órganos de Transmisión</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Reglas de Representación</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. Representación de Órganos de Máquinas en Ingeniería</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    La transmisión de potencia mecánica entre ejes rotativos se efectúa mediante componentes estandarizados conocidos como órganos de máquinas (engranajes, poleas, chavetas, árboles y rodamientos). Debido a la complejidad de las formas geométricas de estos componentes, como las curvas evolventes en los flancos de los dientes de los engranajes, las normativas de dibujo técnico imponen una fuerte simplificación gráfica.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Siguiendo los estándares del manual **GTZ Metal 2** y los textos avanzados de la **UNED**, las convenciones de dibujo eliminan la necesidad de delinear cada diente o elemento rodante en un plano general. En su lugar, se utilizan líneas normalizadas específicas que definen parámetros críticos como los diámetros primitivos, permitiendo a los ingenieros y torneros interpretar de inmediato las características de acoplamiento del sistema cinemático.
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Fundamentos Teóricos (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    La delineación de elementos de transmisión sigue reglas estrictas de espesores y estilos de línea para representar las superficies funcionales ocultas y de engranado:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-sm text-gray-600">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <span class="font-bold text-techBlue block">Engranajes Cilíndricos</span>
+                        <p class="text-xs mt-1">El diámetro exterior (cresta) se dibuja con **línea gruesa continua**. El **diámetro primitivo** (zona de contacto teórico) se traza obligatoriamente con **línea fina de trazo y punto**. El diámetro de fondo no se representa a menos que sea un corte.</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <span class="font-bold text-techBlue block">Chavetas y Chaveteros</span>
+                        <p class="text-xs mt-1">Son elementos de fijación sólida antigiros. En los cortes de ejes, la chaveta se representa sin seccionar (vista sólida completa) de acuerdo con los convenios de elementos longitudinales macizos en planos de ensamble.</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <span class="font-bold text-techBlue block">Rodamientos</span>
+                        <p class="text-xs mt-1">Se pueden representar de forma simplificada dibujando el contorno del anillo exterior e interior y trazando una **"X"** delgada en el centro, o dibujando de forma exacta los círculos de las bolas sin seccionarlas en las vistas de corte.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Cálculos y Parámetros Esenciales para el Trazado de Engranajes</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold">Parámetro Técnico</th>
+                                    <th class="p-3 font-semibold">Símbolo</th>
+                                    <th class="p-3 font-semibold">Fórmula de Taller</th>
+                                    <th class="p-3 font-semibold">Uso en el Dibujo CAD</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-medium">Módulo</td>
+                                    <td class="p-3 font-mono">m</td>
+                                    <td class="p-3">Dato de diseño normalizado</td>
+                                    <td class="p-3">Define el tamaño del diente y las proporciones mecánicas.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-medium">Diámetro Primitivo</td>
+                                    <td class="p-3 font-mono">d</td>
+                                    <td class="p-3 font-mono">d = m · z</td>
+                                    <td class="p-3 text-blue-600 font-semibold">Línea de trazo y punto. Eje de engranado dinámico.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-medium">Diámetro Exterior</td>
+                                    <td class="p-3 font-mono">da</td>
+                                    <td class="p-3 font-mono">da = d + (2 · m)</td>
+                                    <td class="p-3 text-gray-900 font-semibold">Línea continua gruesa. Límite físico de la pieza.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 font-medium">Número de Dientes</td>
+                                    <td class="p-3 font-mono">z</td>
+                                    <td class="p-3">Conteo físico</td>
+                                    <td class="p-3">Se indica de forma obligatoria en la tabla de datos del plano.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-blue-50 border-l-4 border-techBlue p-4 rounded-r-lg">
+                    <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+                        <strong>Criterio de Ensambles en Engranado:</strong> En las zonas de acoplamiento de dos ruedas dentadas en un plano de sección, **los dientes de la rueda conductora cubren u ocultan de forma prioritaria a los de la rueda conducida**, y las líneas de sus dos diámetros primitivos deben quedar perfectamente tangentes.
+                    </p>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Diseño Asistido Mecánico)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Problema Técnico de Delineación:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante completará el plano técnico de corte de un **"Engranaje Recto con un Agujero de Árbol y Chavetero"**. Con los datos geométricos calculados ($m = 4$, $z = 25$), el estudiante modelará el perfil simplificado de la rueda y detallará las dimensiones normalizadas del alojamiento de la chaveta.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Cálculo de Diámetros de Trabajo:</strong> Determine las dimensiones de trazado. Diámetro Primitivo $d = 4 \times 25 = 100\text{ mm}$. Diámetro Exterior $da = 100 + (2 \times 4) = 108\text{ mm}$. Diámetro de Fondo $df = 100 - (2.5 \times 4) = 90\text{ mm}$.</li>
+                    <li><strong>Delineación de la Geometría en Capas:</strong> Use la capa `01_CONTORNOS` (grosor 0.5) para dibujar la circunferencia exterior de `108 mm`. Use la capa `03_EJES` (trazo y punto fino) para trazar el círculo primitivo de `100 mm`. En la vista seccionada lateral, dibuje el diámetro de fondo de `90 mm` con línea continua fina.</li>
+                    <li><strong>Modelado del Chavetero Normalizado:</strong> Para el agujero central del eje de `20 mm`, dibuje el chavetero superior con un ancho estandarizado de `6 mm` y una profundidad profunda sobre el cubo de `2.8 mm` según tablas técnicas de diseño. Elimine las líneas internas excedentes con `TRIM`.</li>
+                    <li><strong>Inclusión del Cuadro de Características Técnicas:</strong> Genere una tabla de texto limpia en una esquina del plano detallando de forma obligatoria: Módulo ($m$), Número de dientes ($z$), Ángulo de presión ($20^\circ$) y Tipo de dentado. Guarde el entregable final con el nombre estándar: <code>Modulo12_Engranaje_Transmision.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Formativa</h2>
+                <p class="text-sm text-gray-600 mb-4">Mide tu nivel de asimilación en dibujo de componentes cinemáticos de máquinas:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. ¿Qué tipo de línea normalizada se debe emplear de manera estricta para representar el Diámetro Primitivo de un engranaje en una vista no seccionada?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p21" class="mr-2">a) Línea gruesa continua, idéntica a la del diámetro exterior.</label>
+                            <label class="block"><input type="radio" name="p21" class="mr-2">b) Línea fina continua de color rojo.</label>
+                            <label class="block"><input type="radio" name="p21" class="mr-2">c) Línea fina de trazo y punto, dado que representa una línea de referencia funcional teórica.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. Cuando se representa un plano de conjunto mecánico que incluye un eje con una chaveta insertada, ¿cuál es la norma de corte para la chaveta y el eje en una sección longitudinal?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p22" class="mr-2">a) Tanto el eje macizo como la chaveta se muestran completos, sin aplicarles el rayado de sección (no se cortan longitudinalmente).</label>
+                            <label class="block"><input type="radio" name="p22" class="mr-2">b) Se deben cortar y rellenar con un sombreado cruzado tupido.</label>
+                            <label class="block"><input type="radio" name="p22" class="mr-2">c) Se eliminan del dibujo y se representan mediante líneas ocultas discontinuas.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 12:\n1: c) El diámetro primitivo se traza de forma estricta con línea fina de trazo y punto.\n2: a) Por convenio internacional, los elementos longitudinales macizos (ejes, chavetas, pernos, pasadores) no se cortan longitudinalmente en planos de conjunto para preservar la legibilidad del plano.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
