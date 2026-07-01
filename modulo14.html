@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 14: Dibujo de Conjuntos Mecánicos, Despiece y Listas de Materiales (BOM)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Mantenimiento de la paleta institucional aprobada en la plantilla base
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#1e3a8a',
+                        techCyan: '#06b6d4',
+                        techGray: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-techGray font-sans text-gray-800 antialiased">
 
+    <header class="bg-gradient-to-r from-techBlue to-indigo-900 text-white py-12 px-6 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <span class="bg-techCyan text-techBlue text-xs font-bold uppercase px-3 py-1 rounded-full">Dibujo Técnico Computarizado</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-3">Módulo 14: Dibujo de Conjuntos, Despiece y BOM</h1>
+            <p class="text-indigo-200 mt-2 text-lg">Documentación final de planos de ensamble, marcas de identificación (ISO 6433) y listas de materiales (ISO 7573).</p>
+            
+            <div class="flex flex-wrap gap-4 mt-6 text-sm text-indigo-100">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Nivel:</span> Avanzado / Integrador
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Teoría:</span> 2 Horas
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-lg">
+                    <span class="font-bold text-techCyan mr-2">Laboratorio:</span> 2 Horas
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                <h3 class="font-bold text-techBlue text-sm uppercase tracking-wider mb-4">Contenido del Módulo</h3>
+                <nav class="space-y-2">
+                    <a href="#introduccion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">1. Planos de Conjunto</a>
+                    <a href="#teoria" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">2. Normas de Despiece</a>
+                    <a href="#laboratorio" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">3. Práctica de Laboratorio</a>
+                    <a href="#evaluacion" class="block text-sm p-2 rounded hover:bg-indigo-50 hover:text-techBlue transition font-medium">4. Auto-Evaluación</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-12">
+            
+            <div id="introduccion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">1. Planos de Conjunto y Relación de Despiece</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    En el entorno industrial real, ninguna pieza opera de forma aislada; forman parte de un mecanismo o máquina. El **Plano de Conjunto (o Ensamble)** ilustra cómo se asocian, encajan y funcionan todas las piezas componentes. Su objetivo principal es explicar el montaje, por lo que no requiere una acotación total de cada pieza, sino únicamente las **cotas funcionales** principales, cotas de posición y dimensiones máximas totales (gálibo).
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Siguiendo los lineamientos de los textos de la **UNED** y el enfoque práctico del manual **GTZ Metal 2**, el plano de conjunto se complementa de forma obligatoria con los **Planos de Despiece** (donde cada pieza de fabricación especial se dibuja y acota individualmente) y la **Lista de Materiales (BOM - Bill of Materials)**, la cual actúa como el inventario técnico estructurado del mecanismo.
+                </p>
+            </div>
+
+            <div id="teoria" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">2. Reglas Normalizadas de Marcado y Estructura BOM (2 Horas de Teoría)</h2>
+                <p class="text-gray-600 mb-6">
+                    Para vincular sin errores las piezas del plano de conjunto con sus respectivos planos de despiece y la lista de materiales, se aplican dos normas internacionales clave:
+                </p>
+
+                <div class="space-y-4 mb-8">
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">A. Marcas de Identificación de Piezas (ISO 6433)</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Cada componente del conjunto se identifica mediante un número (marca). El número se encierra en un círculo o se posiciona limpiamente conectado a la pieza a través de una **línea de directriz** fina terminada en un punto (si toca el interior de la pieza) o en una flecha (si toca una arista del contorno). Los números deben disponerse de forma ordenada (en sentido horario o alineados en filas/columnas).
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="font-bold text-techBlue text-base">B. El Criterio del Rayado en Cortes de Conjunto</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Cuando un plano de conjunto se representa en sección, **las superficies de corte de piezas diferentes deben rayarse con inclinaciones o espaciados distintos** (ej. una pieza a 45° y la contigua a 135° o con menor interlineado). Esto permite al operario distinguir de manera inmediata dónde termina un componente y dónde empieza otro.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-3 text-sm uppercase tracking-wider">Estructura de la Lista de Materiales (ISO 7573)</h4>
+                    <p class="text-xs text-gray-600 mb-2">Por norma general, la tabla se sitúa directamente sobre el cuadro de datos (cajetín) y se lee de abajo hacia arriba, o de arriba hacia abajo si se presenta en una hoja independiente:</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs md:text-sm border border-gray-200">
+                            <thead>
+                                <tr class="bg-techBlue text-white">
+                                    <th class="p-3 font-semibold w-16">Marca</th>
+                                    <th class="p-3 font-semibold w-16">Cant.</th>
+                                    <th class="p-3 font-semibold">Denominación / Componente</th>
+                                    <th class="p-3 font-semibold">Norma / Modelo (Si es estándar)</th>
+                                    <th class="p-3 font-semibold">Material</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-600 font-medium">
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 text-center font-bold text-gray-900">4</td>
+                                    <td class="p-3 text-center">4</td>
+                                    <td class="p-3">Tornillo de cabeza hexagonal M10 x 35</td>
+                                    <td class="p-3 font-mono text-xs">ISO 4017</td>
+                                    <td class="p-3">Acero 8.8</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 text-center font-bold text-gray-900">3</td>
+                                    <td class="p-3 text-center">1</td>
+                                    <td class="p-3">Chaveta de ajuste plana (6 x 6 x 25)</td>
+                                    <td class="p-3 font-mono text-xs">DIN 6885A</td>
+                                    <td class="p-3">Acero C45K</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 text-center font-bold text-gray-900">2</td>
+                                    <td class="p-3 text-center">1</td>
+                                    <td class="p-3">Eje de Transmisión Principal</td>
+                                    <td class="p-3 text-gray-400">--- (Plano Despiece 02)</td>
+                                    <td class="p-3">F-1140 (Acero)</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100">
+                                    <td class="p-3 text-center font-bold text-gray-900">1</td>
+                                    <td class="p-3 text-center">1</td>
+                                    <td class="p-3">Cuerpo Soporte de Fundición</td>
+                                    <td class="p-3 text-gray-400">--- (Plano Despiece 01)</td>
+                                    <td class="p-3">EN-GJL-250</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="laboratorio" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">3. Práctica de Laboratorio (2 Horas de Integración de Planos de Conjunto)</h2>
+                
+                <div class="bg-blue-50 border-l-4 border-techBlue p-4 mb-4">
+                    <h4 class="font-bold text-techBlue text-sm">Proyecto Integrador Final:</h4>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">
+                        El estudiante maquetará la lámina final del conjunto **"Soporte de Apoyo de Eje Completo"**. Utilizando el espacio papel, insertará la vista en corte total del mecanismo ensamblado, agregará las líneas de marcas numeradas y confeccionará la tabla de la lista de materiales (BOM) paramétrica en CAD.
+                    </p>
+                </div>
+
+                <h3 class="font-semibold text-gray-700 mt-4 mb-2">Procedimiento Operativo Paso a Paso:</h3>
+                <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-600">
+                    <li><strong>Inserción y Trazado del Conjunto:</strong> Asegúrese de que todas las piezas independientes estén ensambladas correctamente en el Espacio de Modelo. Genere una vista en corte total en el Layout. Aplique el comando `HATCH` (Sombreado) diferenciando el ángulo del patrón ANSI31: asigne `45°` al cuerpo del soporte (Pieza 1) y `135°` al casquillo guía contiguo (Pieza 2).</li>
+                    <li><strong>Colocación Normalizada de Marcas (ISO 6433):</strong> Ejecute el comando de directriz múltiple **`MLEDER` (`MULTILEADER`)**. Configure el estilo para que use un círculo con texto interior. Seleccione el centro del soporte e indique el número `1`. Repita el proceso de forma alineada verticalmente para marcar el eje (`2`), la chaveta (`3`) y los tornillos (`4`).</li>
+                    <li><strong>Construcción de la Lista de Materiales (BOM):</strong> Use el comando `TABLE` (Tabla) en AutoCAD o dibuje las celdas mediante líneas continuas finas. Integre las 5 columnas normalizadas (`Marca`, `Cantidad`, `Denominación`, `Norma/Plano` y `Material`). Rellene la información técnica de forma rigurosa tal como se expuso en la teoría del módulo.</li>
+                    <li><strong>Verificación y Cierre de Proyecto:</strong> Complete los datos de propiedad intelectual, escala del conjunto y fecha en el cajetín de firma. Guarde el archivo final integrador del curso bajo el nombre estándar: <code>Modulo14_Conjunto_Y_BOM.dwg</code>.</li>
+                </ol>
+            </div>
+
+            <div id="evaluacion" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 scroll-mt-6">
+                <h2 class="text-2xl font-bold text-techBlue border-b-2 border-techCyan pb-2 mb-4">4. Banco de Evaluación Teórico-Práctica Final</h2>
+                <p class="text-sm text-gray-600 mb-4">Valida tus competencias de nivel integrador en documentación y gestión de planos de ensamble:</p>
+                
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">1. Al representar un plano de conjunto mecánico seccionado por un plano de corte total, ¿cómo se deben trazar las líneas de rayado de sombreado (Hatch) en dos piezas metálicas distintas que se encuentran en contacto directo?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p25" class="mr-2">a) Se deben rayar exactamente con la misma inclinación y separación para demostrar que están unidas.</label>
+                            <label class="block"><input type="radio" name="p25" class="mr-2">b) Se deben trazar con inclinaciones opuestas (ej. 45° y 135°) o con espaciados diferentes para permitir una clara discriminación visual de los componentes contiguos.</label>
+                            <label class="block"><input type="radio" name="p25" class="mr-2">c) No se debe aplicar sombreado a ninguna de las dos piezas mecánicas.</label>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-4">
+                        <p class="font-medium text-sm text-gray-800">2. De acuerdo con la norma ISO 7573 de listas de materiales (BOM), si un elemento del conjunto es un componente comercial estándar (como un rodamiento rígido de bolas o un tornillo normalizado), ¿qué se debe indicar en la columna de "Norma o Modelo"?</p>
+                        <div class="mt-2 space-y-1 text-xs md:text-sm text-gray-600 pl-2">
+                            <label class="block"><input type="radio" name="p26" class="mr-2">a) Se deja en blanco y se inventa un plano de despiece nuevo.</label>
+                            <label class="block"><input type="radio" name="p26" class="mr-2">b) Se debe escribir la designación normalizada internacional del fabricante o la norma reguladora (ej. ISO 4017 o Rodamiento 6204-2Z) para posibilitar su compra directa sin necesidad de fabricarlo.</label>
+                            <label class="block"><input type="radio" name="p26" class="mr-2">c) El precio estimado del componente en el mercado industrial.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="alert('Clave de respuestas oficiales Módulo 14:\n1: b) El cambio de dirección o paso del rayado es la regla fundamental para diferenciar piezas en planos de ensamble.\n2: b) Los elementos estándar comerciales no se despiezan; se designan por su norma para adquisición directa en almacén.')" class="mt-6 bg-techBlue hover:bg-indigo-800 text-white font-bold text-xs md:text-sm py-2 px-4 rounded transition shadow">
+                    Verificar Respuestas Correctas
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12 border-t border-gray-800 text-xs md:text-sm">
+        <p>© 2026 Plataforma Educativa de Dibujo Técnico Industrial. Desarrollado bajo estándares pedagógicos normalizados.</p>
+    </footer>
+
+</body>
+</html>
